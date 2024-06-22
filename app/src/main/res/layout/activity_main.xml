@@ -20,7 +20,7 @@
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:title="Nephilos"
+            app:title="@string/app_name"
             app:titleTextColor="@color/black"
             android:background="@color/Green_main"
             android:elevation="3dp"
