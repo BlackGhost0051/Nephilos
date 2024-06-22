@@ -42,7 +42,7 @@
         <menu>
             <item
                 android:id="@+id/settings"
-                android:icon="@drawable/arp"
+                android:icon="@drawable/baseline_settings_24"
                 android:title="Settings"
                 />
         </menu>
