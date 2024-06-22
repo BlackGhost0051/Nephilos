@@ -37,13 +37,14 @@
 
     </group>
 
-    <item android:title="Communicate">
-
+    <item android:title="App">
 
         <menu>
-
-
-
+            <item
+                android:id="@+id/settings"
+                android:icon="@drawable/arp"
+                android:title="Settings"
+                />
         </menu>
 
     </item>

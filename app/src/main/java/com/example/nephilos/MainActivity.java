@@ -18,6 +18,7 @@ import com.example.nephilos.Fragments.ArpSpoofFragment;
 import com.example.nephilos.Fragments.MacScannerFragment;
 import com.example.nephilos.Fragments.MainFragment;
 import com.example.nephilos.Fragments.PortScannerFragment;
+import com.example.nephilos.Fragments.SettingsFragment;
 import com.example.nephilos.Fragments.WifiScannerFragment;
 import com.google.android.material.navigation.NavigationView;
 
@@ -53,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.wifi_scanner:
                         drawerLayout.closeDrawer(GravityCompat.START);
-                        //Toast.makeText(MainActivity.this, "Wifi Scanner",Toast.LENGTH_SHORT).show();
                         toolbar.setTitle("Wifi Scanner");
                         fragmentR(new WifiScannerFragment());
 
@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.port_scanner:
                         drawerLayout.closeDrawer(GravityCompat.START);
-                        //Toast.makeText(MainActivity.this, "Wifi Scanner",Toast.LENGTH_SHORT).show();
                         toolbar.setTitle("Port Scanner");
                         fragmentR(new PortScannerFragment());
 
@@ -69,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.mac_scanner:
                         drawerLayout.closeDrawer(GravityCompat.START);
-                        //Toast.makeText(MainActivity.this, "Message",Toast.LENGTH_SHORT).show();
                         toolbar.setTitle("Mac Scanner");
                         fragmentR(new MacScannerFragment());
 
@@ -77,13 +75,15 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.arp_spoof:
                         drawerLayout.closeDrawer(GravityCompat.START);
-                        //Toast.makeText(MainActivity.this, "explore",Toast.LENGTH_SHORT).show();
                         toolbar.setTitle("Arp Spoof");
                         fragmentR(new ArpSpoofFragment());
 
                         break;
 
-
+                    case R.id.settings:
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        toolbar.setTitle("Settings");
+                        fragmentR(new SettingsFragment());
                 }
 
 
