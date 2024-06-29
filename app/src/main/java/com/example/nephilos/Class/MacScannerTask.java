@@ -24,7 +24,10 @@ public class MacScannerTask {
             return result;
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
-            return null;
+            return "Error executing command";
         }
+    }
+    public boolean pingAllIp(String host){
+        return false;
     }
 }
