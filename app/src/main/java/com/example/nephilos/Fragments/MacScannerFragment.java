@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.nephilos.Class.MacScannerTask;
 import com.example.nephilos.R;
 
 import java.io.BufferedReader;
@@ -22,7 +23,7 @@ import java.io.InputStreamReader;
 public class MacScannerFragment extends Fragment {
     Button scanMacBTN;
     TextView infoTextView;
-
+    private MacScannerTask macScannerTask;
     public MacScannerFragment() {
         // Required empty public constructor
     }
@@ -43,11 +44,14 @@ public class MacScannerFragment extends Fragment {
         scanMacBTN = view.findViewById(R.id.scanButton);
         infoTextView = view.findViewById(R.id.infoTextView);
 
+        macScannerTask = new MacScannerTask();
+
         scanMacBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                try {
+                String arpTable = macScannerTask.getArpTable();
+                infoTextView.setText(arpTable);
+                /*try {
                     Process p = Runtime.getRuntime().exec("su -c ip n show");
                     BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
                     StringBuilder output = new StringBuilder();
@@ -64,8 +68,7 @@ public class MacScannerFragment extends Fragment {
                     //Toast.makeText(getActivity(), result, Toast.LENGTH_LONG).show();
                 } catch (IOException | InterruptedException e) {
                     e.printStackTrace();
-                    Toast.makeText(getActivity(), "Error executing command", Toast.LENGTH_SHORT).show();
-                }
+                }*/
             }
         });
 
