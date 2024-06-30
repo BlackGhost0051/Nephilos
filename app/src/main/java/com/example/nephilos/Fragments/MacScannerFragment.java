@@ -51,6 +51,8 @@ public class MacScannerFragment extends Fragment {
             public void onClick(View view) {
                 String arpTable = macScannerTask.getArpTable();
                 infoTextView.setText(arpTable);
+
+                infoTextView.setText(String.valueOf(macScannerTask.pingIp("192.168.0.1")));
                 /*try {
                     Process p = Runtime.getRuntime().exec("su -c ip n show");
                     BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
