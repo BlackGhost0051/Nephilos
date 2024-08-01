@@ -13,25 +13,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+struct  my_arp_packet
+{
+    unsigned char h_dest[ETH_ALEN];	   /* destination eth addr */
+    unsigned char h_source[ETH_ALEN];	   /* source ether addr */
+    unsigned short h_proto;                /* packet type ID field */
+
+
+    unsigned short int ar_hrd;		       /* Format of hardware address.  */
+    unsigned short int ar_pro;             /* Format of protocol address.  */
+    unsigned char ar_hln;		 	       /* Length of hardware address.  */
+    unsigned char ar_pln;				   /* Length of protocol address.  */
+    unsigned short int ar_op;			   /* ARP opcode (command).  */
+    unsigned char ar_sha[ETH_ALEN];        /* Sender hardware address.  */
+    unsigned long ar_sip;				   /* Sender IP address.  */
+    unsigned char ar_tha[ETH_ALEN];	       /* Target hardware address.  */
+    unsigned long ar_tip;				   /* Target IP address.  */
+} __attribute__((packed));
+
+
+void arp_reply_send(){
+
+}
+
+void str_to_mac(){
+
+}
+
 int main(){
-    struct  my_arp_packet
-    {
-        unsigned char h_dest[ETH_ALEN];	   /* destination eth addr */
-        unsigned char h_source[ETH_ALEN];	   /* source ether addr */
-        unsigned short h_proto;                /* packet type ID field */
-
-
-        unsigned short int ar_hrd;		       /* Format of hardware address.  */
-        unsigned short int ar_pro;             /* Format of protocol address.  */
-        unsigned char ar_hln;		 	       /* Length of hardware address.  */
-        unsigned char ar_pln;				   /* Length of protocol address.  */
-        unsigned short int ar_op;			   /* ARP opcode (command).  */
-        unsigned char ar_sha[ETH_ALEN];        /* Sender hardware address.  */
-        unsigned long ar_sip;				   /* Sender IP address.  */
-        unsigned char ar_tha[ETH_ALEN];	       /* Target hardware address.  */
-        unsigned long ar_tip;				   /* Target IP address.  */
-    } __attribute__((packed));
-
-
     return 0;
 }
