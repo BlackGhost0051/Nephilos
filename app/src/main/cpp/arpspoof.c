@@ -36,8 +36,19 @@ void arp_reply_send(){
 
 }
 
-void str_to_mac(){
+void str_to_mac(unsigned char mac[ETH_ALEN],const char *str){
+    int i;
+    char *token, *ptr;
+    char *copy = strdup(str);
 
+    token = strtok(copy, ":");
+
+    for (i = 0; i < ETH_ALEN; i++) {
+        mac[i] = strtol(token, &ptr, 16);
+        token = strtok(NULL, ":");
+    }
+
+    free(copy);
 }
 
 int main(){
