@@ -31,8 +31,31 @@ struct  my_arp_packet{
 } __attribute__((packed));
 
 
-void arp_reply_send(){
+void arp_reply_send(char *iface_name, unsigned long src_ip, unsigned char *src_mac, unsigned int dest_ip, unsigned char *dest_mac){
+    struct my_arp_packet arp;
 
+    memcpy(arp.h_dest,dest_mac,ETH_ALEN);
+    memcpy(arp.h_source,src_mac,ETH_ALEN);
+    arp.h_proto=htons(ETH_P_ARP);
+
+    arp.ar_hln = ETH_ALEN;
+    arp.ar_pln = 4;
+    arp.ar_hrd = htons(ARPHRD_ETHER);
+    arp.ar_pro = htons(ETH_P_IP);
+    arp.ar_op = htons(ARPOP_REPLY);
+    memcpy(arp.ar_sha,src_mac,ETH_ALEN);
+    memcpy(arp.ar_tha,dest_mac,ETH_ALEN);
+    arp.ar_sip=src_ip;
+    arp.ar_tip=dest_ip;
+
+    int sock = socket(PF_PACKET, SOCK_PACKET, htons(ETH_P_ARP));
+    struct sockaddr adr;
+
+    strcpy(adr.sa_data, iface_name);
+    adr.sa_family = AF_INET;
+
+    sendto(sock, (void*)&arp, sizeof(struct my_arp_packet), 0, (struct sockaddr *)&adr, sizeof(struct sockaddr));
+    close(sock);
 }
 
 void str_to_mac(unsigned char mac[ETH_ALEN],const char *str){
