@@ -13,6 +13,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <net/if.h>   // ?
+#include <netpacket/packet.h>
+#include <sys/ioctl.h>
+
 struct  my_arp_packet{
     unsigned char h_dest[ETH_ALEN];	       /* destination eth addr */
     unsigned char h_source[ETH_ALEN];	   /* source ether addr */
@@ -30,6 +34,10 @@ struct  my_arp_packet{
     unsigned long ar_tip;				   /* Target IP address.  */
 } __attribute__((packed));
 
+
+void listen_arp_requests(){
+
+}
 
 void arp_reply_send(char *iface_name, unsigned long src_ip, unsigned char *src_mac, unsigned int dest_ip, unsigned char *dest_mac){
     struct my_arp_packet arp;
