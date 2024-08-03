@@ -26,6 +26,7 @@ public class ArpSpoofFragment extends Fragment {
         // Required empty public constructor
     }
 
+    private final String nativeLibraryDir = requireContext().getApplicationInfo().nativeLibraryDir;
 
     EditText edit1;
     EditText edit2;
