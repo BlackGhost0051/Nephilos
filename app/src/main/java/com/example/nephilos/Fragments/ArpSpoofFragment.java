@@ -57,7 +57,7 @@ public class ArpSpoofFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                start_native_app();
+                start_arp_spoof("wlan0","192.168.0.2","ff:ff:ff:ff:ff:ff","192.168.0.1","ff:ff:ff:ff:ff:ff");
             }
         });
 
@@ -66,7 +66,7 @@ public class ArpSpoofFragment extends Fragment {
 
     }
 
-    private void start_native_app()
+    private void start_arp_spoof(String use_interface, String source_ip, String source_mac, String target_ip, String target_mac)
     {
         new Thread(new Runnable() {
             public void run(){
