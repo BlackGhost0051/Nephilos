@@ -1,6 +1,5 @@
-package com.example.nephilos.Fragments;
+package com.blackghost.nephilos.Fragments;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,15 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.nephilos.Class.MacScannerTask;
-import com.example.nephilos.R;
-
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import com.blackghost.nephilos.Class.MacScannerTask;
+import com.blackghost.nephilos.R;
 
 public class MacScannerFragment extends Fragment {
     Button scanMacBTN;

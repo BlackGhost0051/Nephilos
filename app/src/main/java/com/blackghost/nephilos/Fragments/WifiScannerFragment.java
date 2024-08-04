@@ -1,4 +1,4 @@
-package com.example.nephilos.Fragments;
+package com.blackghost.nephilos.Fragments;
 
 import android.Manifest;
 import android.content.BroadcastReceiver;
@@ -6,22 +6,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
-import android.location.LocationManager;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import androidx.annotation.NonNull;
+
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
-import com.example.nephilos.R;
+import com.blackghost.nephilos.R;
 
 import java.util.List;
 

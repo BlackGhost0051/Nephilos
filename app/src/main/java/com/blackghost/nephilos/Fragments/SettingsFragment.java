@@ -1,9 +1,9 @@
-package com.example.nephilos.Fragments;
+package com.blackghost.nephilos.Fragments;
 
 import android.os.Bundle;
 import androidx.preference.PreferenceFragmentCompat;
 
-import com.example.nephilos.R;
+import com.blackghost.nephilos.R;
 
 public class SettingsFragment  extends PreferenceFragmentCompat{
 

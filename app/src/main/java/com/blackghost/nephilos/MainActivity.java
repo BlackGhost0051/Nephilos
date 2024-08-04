@@ -1,4 +1,4 @@
-package com.example.nephilos;
+package com.blackghost.nephilos;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -12,14 +12,13 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
-import com.example.nephilos.Fragments.ArpSpoofFragment;
-import com.example.nephilos.Fragments.MacScannerFragment;
-import com.example.nephilos.Fragments.MainFragment;
-import com.example.nephilos.Fragments.PortScannerFragment;
-import com.example.nephilos.Fragments.SettingsFragment;
-import com.example.nephilos.Fragments.WifiScannerFragment;
+import com.blackghost.nephilos.Fragments.ArpSpoofFragment;
+import com.blackghost.nephilos.Fragments.MacScannerFragment;
+import com.blackghost.nephilos.Fragments.MainFragment;
+import com.blackghost.nephilos.Fragments.PortScannerFragment;
+import com.blackghost.nephilos.Fragments.SettingsFragment;
+import com.blackghost.nephilos.Fragments.WifiScannerFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {

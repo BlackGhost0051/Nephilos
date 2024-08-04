@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    namespace 'com.example.nephilos'
+    namespace 'com.blackghost.nephilos'
     compileSdk 34
     ndkVersion "26.3.11579264"
 
 
     defaultConfig {
-        applicationId "com.example.nephilos"
+        applicationId "com.blackghost.nephilos"
         minSdk 21
         targetSdk 34
         versionCode 1

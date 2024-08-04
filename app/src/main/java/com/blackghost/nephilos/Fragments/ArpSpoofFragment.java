@@ -1,4 +1,4 @@
-package com.example.nephilos.Fragments;
+package com.blackghost.nephilos.Fragments;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -11,9 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import com.example.nephilos.R;
+import com.blackghost.nephilos.R;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -26,17 +25,14 @@ public class ArpSpoofFragment extends Fragment {
         // Required empty public constructor
     }
 
-    private final String nativeLibraryDir = requireContext().getApplicationInfo().nativeLibraryDir;
-
-    EditText edit1;
-    EditText edit2;
-    EditText edit3;
-    EditText edit4;
+    private String nativeLibraryDir;
+    EditText edit1, edit2, edit3, edit4;
     Button button;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        nativeLibraryDir = requireContext().getApplicationInfo().nativeLibraryDir;
 
     }
 
@@ -53,6 +49,8 @@ public class ArpSpoofFragment extends Fragment {
 
         button = view.findViewById(R.id.button);
 
+        String command = nativeLibraryDir + "libarpspoof.so";
+        Log.d("DIR", command);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,19 +68,20 @@ public class ArpSpoofFragment extends Fragment {
     {
         new Thread(new Runnable() {
             public void run(){
-                Process suProcess=null;
+                Process suProcess = null;
                 try {
                     suProcess = Runtime.getRuntime().exec("su");
 
                     DataOutputStream os = new DataOutputStream(suProcess.getOutputStream());
 
-                    String command = requireContext().getFilesDir().getParent() + "/lib/libarpspoof.so";
+                    String command = nativeLibraryDir + "libarpspoof.so";
                     Log.d("DIR", command);
 
-                    command+= " " + edit1.getText().toString()
+                    command+= " " + use_interface;
+                            /*" " + edit1.getText().toString()
                             + " " + edit2.getText().toString()
                             + " " + edit3.getText().toString()
-                            + " " + edit4.getText().toString();
+                            + " " + edit4.getText().toString();*/
 
                     os.writeBytes(command + "\n");
                     os.close();

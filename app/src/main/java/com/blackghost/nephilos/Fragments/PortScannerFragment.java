@@ -1,4 +1,4 @@
-package com.example.nephilos.Fragments;
+package com.blackghost.nephilos.Fragments;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -10,12 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.nephilos.R;
+import com.blackghost.nephilos.R;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

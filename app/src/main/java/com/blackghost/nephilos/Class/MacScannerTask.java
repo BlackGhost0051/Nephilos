@@ -1,6 +1,4 @@
-package com.example.nephilos.Class;
-
-import android.widget.Toast;
+package com.blackghost.nephilos.Class;
 
 import java.io.BufferedReader;
 import java.io.IOException;
