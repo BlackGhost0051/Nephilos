@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.blackghost.nephilos.R;
 
@@ -21,12 +22,10 @@ import java.io.IOException;
 public class ArpSpoofFragment extends Fragment {
 
 
-    public ArpSpoofFragment() {
-        // Required empty public constructor
-    }
+    public ArpSpoofFragment() {}
 
     private String nativeLibraryDir;
-    EditText edit1, edit2, edit3, edit4;
+    private TextView info_view;
     Button button;
 
     @Override
@@ -41,11 +40,6 @@ public class ArpSpoofFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_arp_spoof, container, false);
-
-        edit1 = view.findViewById(R.id.editText);
-        edit2 = view.findViewById(R.id.editText2);
-        edit3 = view.findViewById(R.id.editText3);
-        edit4 = view.findViewById(R.id.editText4);
 
         button = view.findViewById(R.id.button);
 
@@ -64,8 +58,7 @@ public class ArpSpoofFragment extends Fragment {
 
     }
 
-    private void start_arp_spoof(String use_interface, String source_ip, String source_mac, String target_ip, String target_mac)
-    {
+    private void start_arp_spoof(String use_interface, String source_ip, String source_mac, String target_ip, String target_mac) {
         new Thread(new Runnable() {
             public void run(){
                 Process suProcess = null;
@@ -78,10 +71,6 @@ public class ArpSpoofFragment extends Fragment {
                     Log.d("DIR", command);
 
                     command+= " " + use_interface;
-                            /*" " + edit1.getText().toString()
-                            + " " + edit2.getText().toString()
-                            + " " + edit3.getText().toString()
-                            + " " + edit4.getText().toString();*/
 
                     os.writeBytes(command + "\n");
                     os.close();
