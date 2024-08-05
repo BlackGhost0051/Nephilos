@@ -20,7 +20,7 @@ import java.io.IOException;
 
 
 public class ArpSpoofFragment extends Fragment {
-
+    // Add icmp_send host 1 -> 255
 
     public ArpSpoofFragment() {}
 
@@ -61,7 +61,7 @@ public class ArpSpoofFragment extends Fragment {
     private void start_arp_spoof(String use_interface, String source_ip, String source_mac, String target_ip, String target_mac) {
         new Thread(new Runnable() {
             public void run(){
-                Process suProcess = null;
+                Process suProcess = null;   // Test het info from C code ( printf )
                 try {
                     suProcess = Runtime.getRuntime().exec("su");
 
