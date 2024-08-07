@@ -7,3 +7,9 @@ Now includes:
 - MAC scanner
 - Port scanner ( TCP )
 - ARP spoof ( test )
+
+Planning:
+- DHCP spoof
+- ICMP send
+- URL to IP
+- Beacon Flooding Attack
