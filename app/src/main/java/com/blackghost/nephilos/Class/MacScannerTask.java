@@ -8,7 +8,7 @@ import java.net.InetAddress;
 public class MacScannerTask {
     public String getArpTable(){
 
-        // make ICMP send from HOST ( make c code send_icmp_from_all("192.168.0.") )
+        // make ICMP send from HOST ( make c code send_icmp_to_all("192.168.0.") )
 
         try {
             Process p = Runtime.getRuntime().exec("su -c ip n show");
