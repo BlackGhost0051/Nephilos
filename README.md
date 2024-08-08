@@ -13,3 +13,4 @@ Planning:
 - ICMP send
 - URL to IP
 - Beacon Flooding Attack
+- Deauthenticate Clients
