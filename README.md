@@ -1,6 +1,6 @@
 # Nephilos
 
-![](./app/src/main/ic_launcher-playstore.png "Nephilos")
+![](./app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp "Nephilos")
 
 Android set of tools for working with the network (need ROOT).
 
