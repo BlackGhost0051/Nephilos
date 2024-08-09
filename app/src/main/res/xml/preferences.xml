@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="Application">
-        <ListPreference>
+        <ListPreference
+            android:key=""
+            android:title=""
+            >
+
         </ListPreference>
     </PreferenceCategory>
 </PreferenceScreen>
