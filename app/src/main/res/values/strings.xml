@@ -8,4 +8,21 @@
     <string name="close">close</string>
 
     <string name="interface_name"></string>
+
+
+
+
+    <!-- Theme options displayed to the user -->
+    <string-array name="theme_options">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>System Default</item>
+    </string-array>
+
+    <!-- Corresponding values stored in SharedPreferences -->
+    <string-array name="theme_values">
+        <item>light</item>
+        <item>dark</item>
+        <item>system</item>
+    </string-array>
 </resources>
