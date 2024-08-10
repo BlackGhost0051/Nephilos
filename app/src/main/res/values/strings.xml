@@ -12,6 +12,12 @@
 
 
 
+    <string name="theme_preference_title">Select Theme</string>
+    <string name="theme_preference_summary">Choose the application theme</string>
+
+
+
+
     <!-- Theme options displayed to the user -->
     <string-array name="theme_options">
         <item>Light</item>
