@@ -70,7 +70,7 @@ public class ArpSpoofFragment extends Fragment {
                     String command = nativeLibraryDir + "libarpspoof.so";
                     Log.d("DIR", command);
 
-                    command+= " " + use_interface;
+                    command += " " + use_interface + " " + source_ip + " " + source_mac + " " + target_ip + " " + target_mac;
 
                     os.writeBytes(command + "\n");
                     os.close();
