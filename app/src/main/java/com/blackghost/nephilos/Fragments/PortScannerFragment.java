@@ -36,8 +36,8 @@ public class PortScannerFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_port_scanner, container, false);
 
-        ipEditText = view.findViewById(R.id.ipEditText);
-        portsEditText = view.findViewById(R.id.portsEditText);
+        ipEditText = view.findViewById(R.id.ipInput);
+        portsEditText = view.findViewById(R.id.portInput);
         scanButton = view.findViewById(R.id.scanButton);
         resultTextView = view.findViewById(R.id.resultTextView);
         resultTextView.setMovementMethod(new ScrollingMovementMethod());

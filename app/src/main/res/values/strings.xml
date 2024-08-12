@@ -7,9 +7,13 @@
     <string name="open">open</string>
     <string name="close">close</string>
 
+    
+    
+    <string name="PortScannerFragment_EditText_ipInput_hint">Enter IP Address</string>
+    <string name="PortScannerFragment_EditText_portInput_hint">Enter Ports (e.g., 124,178,13-80)</string>
 
 
-
+    <!-- Preference -->
     <string name="interface_name_title">interface_name_title</string>
     <string name="interface_name_summary">interface_name_summary</string>
 
