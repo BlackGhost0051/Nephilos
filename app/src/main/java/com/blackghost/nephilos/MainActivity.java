@@ -55,34 +55,31 @@ public class MainActivity extends AppCompatActivity {
                         drawerLayout.closeDrawer(GravityCompat.START);
                         toolbar.setTitle(R.string.toolbar_wifi_scanner);
                         fragmentR(new WifiScannerFragment());
-
                         break;
 
                     case R.id.port_scanner:
                         drawerLayout.closeDrawer(GravityCompat.START);
                         toolbar.setTitle(R.string.toolbar_port_scanner);
                         fragmentR(new PortScannerFragment());
-
                         break;
 
                     case R.id.mac_scanner:
                         drawerLayout.closeDrawer(GravityCompat.START);
                         toolbar.setTitle(R.string.toolbar_mac_scanner);
                         fragmentR(new MacScannerFragment());
-
                         break;
 
                     case R.id.arp_spoof:
                         drawerLayout.closeDrawer(GravityCompat.START);
                         toolbar.setTitle(R.string.toolbar_arp_spoof);
                         fragmentR(new ArpSpoofFragment());
-
                         break;
 
                     case R.id.settings:
                         drawerLayout.closeDrawer(GravityCompat.START);
                         toolbar.setTitle(R.string.toolbar_settings);
                         fragmentR(new SettingsFragment());
+                        break;
                 }
 
                 return true;
