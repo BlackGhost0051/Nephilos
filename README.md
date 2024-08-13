@@ -27,6 +27,7 @@ Now includes:
 Planning:
 - DHCP spoof
 - ICMP send
+- Request send ( POST, GET...)
 - URL to IP
 - Beacon Flooding Attack
 - Deauthenticate Clients
