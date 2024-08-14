@@ -11,15 +11,11 @@
     <string name="toolbar_wifi_scanner">Wifi Scanner</string>
     <string name="toolbar_port_scanner">Port Scanner</string>
     <string name="toolbar_mac_scanner">Mac Scanner</string>
+    <string name="toolbar_request">Request</string>
     <string name="toolbar_arp_spoof">Arp Spoof</string>
     <string name="toolbar_settings">Settings</string>
 
 
-
-
-
-    
-    
     <string name="PortScannerFragment_EditText_ipInput_hint">Enter IP Address</string>
     <string name="PortScannerFragment_EditText_portInput_hint">Enter Ports (e.g., 124,178,13-80)</string>
 
@@ -30,8 +26,6 @@
 
     <string name="theme_preference_title">Select Theme</string>
     <string name="theme_preference_summary">Choose the application theme</string>
-
-
 
 
     <!-- Theme options displayed to the user -->
@@ -47,4 +41,14 @@
         <item>dark</item>
         <item>system</item>
     </string-array>
+
+
+    <!-- Array -->
+    <string-array name="request_types">
+        <item>GET</item>
+        <item>POST</item>
+    </string-array>
+
+
+
 </resources>

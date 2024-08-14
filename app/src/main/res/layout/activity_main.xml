@@ -46,9 +46,11 @@
         android:id="@+id/nav"
         app:headerLayout="@layout/header"
         android:layout_height="match_parent"
+
         app:itemIconTint="@color/Green_main"
-        android:background="@color/black"
         app:itemTextColor="@color/Green_main"
+
+        android:background="@color/black"
         />
 
 

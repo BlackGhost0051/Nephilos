@@ -17,6 +17,7 @@ import com.blackghost.nephilos.Fragments.ArpSpoofFragment;
 import com.blackghost.nephilos.Fragments.MacScannerFragment;
 import com.blackghost.nephilos.Fragments.MainFragment;
 import com.blackghost.nephilos.Fragments.PortScannerFragment;
+import com.blackghost.nephilos.Fragments.RequestFragment;
 import com.blackghost.nephilos.Fragments.SettingsFragment;
 import com.blackghost.nephilos.Fragments.WifiScannerFragment;
 import com.google.android.material.navigation.NavigationView;
@@ -67,6 +68,11 @@ public class MainActivity extends AppCompatActivity {
                         drawerLayout.closeDrawer(GravityCompat.START);
                         toolbar.setTitle(R.string.toolbar_mac_scanner);
                         fragmentR(new MacScannerFragment());
+                        break;
+                    case R.id.request :
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        toolbar.setTitle(R.string.toolbar_request);
+                        fragmentR(new RequestFragment());
                         break;
 
                     case R.id.arp_spoof:

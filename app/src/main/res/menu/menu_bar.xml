@@ -10,26 +10,32 @@
         <item
             android:id="@+id/wifi_scanner"
             android:icon="@drawable/ic_baseline_wifi_24"
-            android:title="Wifi Scanner"
+            android:title="@string/toolbar_wifi_scanner"
             />
 
         <item
             android:id="@+id/mac_scanner"
             android:icon="@drawable/mac"
-            android:title="Mac Scanner"/>
+            android:title="@string/toolbar_mac_scanner"/>
 
 
         <item
             android:id="@+id/port_scanner"
             android:icon="@drawable/ic_baseline_storage_24"
-            android:title="Port Scanner"
+            android:title="@string/toolbar_port_scanner"
 
+            />
+
+        <item
+            android:id="@+id/request"
+            android:icon="@color/white"
+            android:title="@string/toolbar_request"
             />
 
         <item
             android:id="@+id/arp_spoof"
             android:icon="@drawable/arp"
-            android:title="Arp Spoof"/>
+            android:title="@string/toolbar_arp_spoof"/>
 
 
 

@@ -4,4 +4,8 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textColorHint">@color/white_50</item>
     </style>
+
+    <style name="code">
+
+    </style>
 </resources>
