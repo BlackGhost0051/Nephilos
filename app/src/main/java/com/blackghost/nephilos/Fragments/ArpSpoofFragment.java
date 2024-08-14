@@ -15,8 +15,10 @@ import android.widget.TextView;
 
 import com.blackghost.nephilos.R;
 
+import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 
 public class ArpSpoofFragment extends Fragment {
@@ -42,6 +44,7 @@ public class ArpSpoofFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_arp_spoof, container, false);
 
         button = view.findViewById(R.id.button);
+        info_view = view.findViewById(R.id.info_view);
 
         String command = nativeLibraryDir + "libarpspoof.so";
         Log.d("DIR", command);
@@ -61,20 +64,40 @@ public class ArpSpoofFragment extends Fragment {
     private void start_arp_spoof(String use_interface, String source_ip, String source_mac, String target_ip, String target_mac) {
         new Thread(new Runnable() {
             public void run(){
-                Process suProcess = null;   // Test het info from C code ( printf )
+                Process suProcess = null;
                 try {
                     suProcess = Runtime.getRuntime().exec("su");
 
                     DataOutputStream os = new DataOutputStream(suProcess.getOutputStream());
 
-                    String command = nativeLibraryDir + "libarpspoof.so";
+                    String command = nativeLibraryDir + "/libarpspoof.so";
                     Log.d("DIR", command);
 
                     command += " " + use_interface + " " + source_ip + " " + source_mac + " " + target_ip + " " + target_mac;
 
                     os.writeBytes(command + "\n");
+                    os.flush();
                     os.close();
-                } catch (IOException e) {
+
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(suProcess.getInputStream()));
+                    String line;
+                    StringBuilder output = new StringBuilder();
+
+                    while ((line = reader.readLine()) != null) {
+                        output.append(line).append("\n");
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                info_view.setText(output.toString());
+                            }
+                        });
+                    }
+
+                    reader.close();
+
+                    suProcess.waitFor();
+
+                } catch (IOException | InterruptedException e) {
                     e.printStackTrace();
                 }
             }

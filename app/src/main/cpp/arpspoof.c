@@ -82,7 +82,13 @@ void str_to_mac(unsigned char mac[ETH_ALEN],const char *str){
 }
 
 int main(int argc, char **argv){
-    printf("Test");
+    printf("Test 1\n");
+    fflush(stdout);
+    sleep(2);
+
+    printf("Test 2\n");
+    fflush(stdout);
+    sleep(2);
 
 
     /*char *my_interface = "wlan0"; // interface name
