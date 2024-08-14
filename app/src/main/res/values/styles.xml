@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="edit_text_style">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/white_50</item>
+    </style>
+</resources>
