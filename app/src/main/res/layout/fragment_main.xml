@@ -17,13 +17,13 @@
 
     <Button
         android:id="@+id/gitHubBtn"
+
+        style="@style/button_style"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
-        android:textColor="@color/white"
         android:text="GitHub"
-        android:backgroundTint="@color/black"
-        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

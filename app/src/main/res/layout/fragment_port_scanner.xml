@@ -40,6 +40,9 @@
 
     <Button
         android:id="@+id/scanButton"
+
+        style="@style/button_style"
+
         android:layout_width="260dp"
         android:layout_height="39dp"
         android:layout_marginTop="24dp"
