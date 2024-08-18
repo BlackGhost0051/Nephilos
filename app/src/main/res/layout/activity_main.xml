@@ -49,8 +49,9 @@
 
         app:itemIconTint="@color/Green_main"
         app:itemTextColor="@color/Green_main"
+        app:subheaderColor="@color/white"
 
-        android:background="@color/black"
+        style="@style/nav_view_style"
         />
 
 

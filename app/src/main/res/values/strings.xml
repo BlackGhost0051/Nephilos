@@ -42,6 +42,19 @@
         <item>system</item>
     </string-array>
 
+    <string-array name="interface_names">
+        <item>wlan0</item>
+        <item>wlan1</item>
+        <item>eth0</item>
+    </string-array>
+
+    <string-array name="interface_values">
+        <item>wlan0</item>
+        <item>wlan1</item>
+        <item>eth0</item>
+    </string-array>
+
+
 
     <!-- Array -->
     <string-array name="request_types">

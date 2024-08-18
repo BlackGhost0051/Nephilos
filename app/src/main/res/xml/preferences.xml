@@ -14,7 +14,8 @@
             android:key="interface_name"
             android:title="@string/interface_name_title"
             android:summary="@string/interface_name_summary"
-            android:defaultValue=""
+            android:entries="@array/interface_names"
+            android:entryValues="@array/interface_values"
             />
     </PreferenceCategory>
 </PreferenceScreen>
