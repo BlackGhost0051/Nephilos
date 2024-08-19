@@ -29,6 +29,9 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import android.content.SharedPreferences;
+import androidx.preference.PreferenceManager;
+
 public class MainActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
@@ -44,6 +47,18 @@ public class MainActivity extends AppCompatActivity {
         get_interfaces();
 
         // need add checking if there are libs so if empty use ApkManager && finding internet interfaces and add to memory && add checking ROOT access
+
+
+
+/*      GET INTERFACE VALUE
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        String selectedInterface = sharedPreferences.getString("interface_name", "wlan0");
+        Log.d("Selected Interface: ",selectedInterface);
+*/
+
+
+
 
         drawerLayout = findViewById(R.id.drawerLayout);
         toolbar = findViewById(R.id.toolbar);
