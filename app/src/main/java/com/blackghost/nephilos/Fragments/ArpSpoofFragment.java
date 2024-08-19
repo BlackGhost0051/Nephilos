@@ -46,7 +46,7 @@ public class ArpSpoofFragment extends Fragment {
         button = view.findViewById(R.id.button);
         info_view = view.findViewById(R.id.info_view);
 
-        String command = nativeLibraryDir + "libarpspoof.so";
+        String command = nativeLibraryDir + "/libarp_spoof.so";
         Log.d("DIR", command);
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +70,7 @@ public class ArpSpoofFragment extends Fragment {
 
                     DataOutputStream os = new DataOutputStream(suProcess.getOutputStream());
 
-                    String command = nativeLibraryDir + "/libarpspoof.so";
+                    String command = nativeLibraryDir + "/libarp_spoof.so";
                     Log.d("DIR", command);
 
                     command += " " + use_interface + " " + source_ip + " " + source_mac + " " + target_ip + " " + target_mac;
@@ -88,6 +88,7 @@ public class ArpSpoofFragment extends Fragment {
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+                                Log.d("TEST",output.toString());
                                 info_view.setText(output.toString());
                             }
                         });
