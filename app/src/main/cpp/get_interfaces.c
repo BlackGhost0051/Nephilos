@@ -29,6 +29,7 @@ int main() {
 
     for (int i = 0; i < interfaces_count; i++) {
         printf("%s\n", ifr[i].ifr_name);
+        fflush(stdout);
     }
 
     close(sockfd);

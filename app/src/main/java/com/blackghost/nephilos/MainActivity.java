@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.blackghost.nephilos.Fragments.ArpSpoofFragment;
@@ -20,19 +21,27 @@ import com.blackghost.nephilos.Fragments.PortScannerFragment;
 import com.blackghost.nephilos.Fragments.RequestFragment;
 import com.blackghost.nephilos.Fragments.SettingsFragment;
 import com.blackghost.nephilos.Fragments.WifiScannerFragment;
+import com.blackghost.nephilos.Managers.LibraryManager;
 import com.google.android.material.navigation.NavigationView;
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     NavigationView navigationView;
-
+    String nativeLibraryDir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        nativeLibraryDir = LibraryManager.getLibraryDir(this);
+        get_interfaces();
 
         // need add checking if there are libs so if empty use ApkManager && finding internet interfaces and add to memory && add checking ROOT access
 
@@ -100,5 +109,48 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frameLayout,fragment);
         fragmentTransaction.commit();
+    }
+
+
+    private void get_interfaces() {
+        new Thread(new Runnable() {
+            public void run(){
+                Process suProcess = null;
+                try {
+                    suProcess = Runtime.getRuntime().exec("su");
+
+                    DataOutputStream os = new DataOutputStream(suProcess.getOutputStream());
+
+                    String command = nativeLibraryDir + "/libget_interfaces.so";
+                    Log.d("DIR", command);
+
+                    os.writeBytes(command + "\n");
+                    os.flush();
+                    os.close();
+
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(suProcess.getInputStream()));
+                    String line;
+                    StringBuilder output = new StringBuilder();
+
+                    while ((line = reader.readLine()) != null) {
+                        output.append(line).append("\n");
+                    }
+
+                    reader.close();
+
+                    suProcess.waitFor();
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Log.d("Interfaces",output.toString());
+                        }
+                    });
+
+                } catch (IOException | InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 }
