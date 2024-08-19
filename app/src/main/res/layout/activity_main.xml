@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             app:title="@string/app_name"
             app:titleTextColor="@color/black"
-            android:background="@color/Green_main"
+            android:background="@color/green_main"
             android:elevation="3dp"
             android:id="@+id/toolbar"
             />
@@ -47,9 +47,9 @@
         app:headerLayout="@layout/header"
         android:layout_height="match_parent"
 
-        app:itemIconTint="@color/Green_main"
-        app:itemTextColor="@color/Green_main"
-        app:subheaderColor="@color/white"
+        app:itemIconTint="@color/green_main"
+        app:itemTextColor="@color/green_main"
+        app:subheaderColor="@color/red"
 
         style="@style/nav_view_style"
         />

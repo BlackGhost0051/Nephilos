@@ -33,7 +33,7 @@
         android:layout_marginBottom="20dp"
         android:divider="@android:color/darker_gray"
         android:dividerHeight="1px"
-        android:textColor="@color/Green_main"
+        android:textColor="@color/green_main"
         android:textIsSelectable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
