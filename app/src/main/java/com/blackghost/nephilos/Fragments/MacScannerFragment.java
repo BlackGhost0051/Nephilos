@@ -13,6 +13,10 @@ import android.widget.TextView;
 import com.blackghost.nephilos.Class.MacScannerTask;
 import com.blackghost.nephilos.R;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class MacScannerFragment extends Fragment {
     Button scanMacBTN;
     TextView infoTextView;
@@ -42,11 +46,11 @@ public class MacScannerFragment extends Fragment {
         scanMacBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String arpTable = macScannerTask.getArpTable();
+                /*String arpTable = macScannerTask.getArpTable();
                 infoTextView.setText(arpTable);
 
-                infoTextView.setText(String.valueOf(macScannerTask.pingIp("192.168.0.1")));
-                /*try {
+                infoTextView.setText(String.valueOf(macScannerTask.pingIp("192.168.0.1")));*/
+                try {
                     Process p = Runtime.getRuntime().exec("su -c ip n show");
                     BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
                     StringBuilder output = new StringBuilder();
@@ -63,7 +67,7 @@ public class MacScannerFragment extends Fragment {
                     //Toast.makeText(getActivity(), result, Toast.LENGTH_LONG).show();
                 } catch (IOException | InterruptedException e) {
                     e.printStackTrace();
-                }*/
+                }
             }
         });
 
