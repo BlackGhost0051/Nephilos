@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.blackghost.nephilos.Managers.LibraryManager;
 import com.blackghost.nephilos.R;
 
 import java.io.BufferedReader;
@@ -33,8 +34,8 @@ public class ArpSpoofFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        nativeLibraryDir = requireContext().getApplicationInfo().nativeLibraryDir;
-
+        nativeLibraryDir = LibraryManager.getLibraryDir(getActivity());
+        Log.d("DIR T", nativeLibraryDir);
     }
 
     @SuppressLint("MissingInflatedId")
@@ -46,8 +47,6 @@ public class ArpSpoofFragment extends Fragment {
         button = view.findViewById(R.id.button);
         info_view = view.findViewById(R.id.info_view);
 
-        String command = nativeLibraryDir + "/libarp_spoof.so";
-        Log.d("DIR", command);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,8 +56,6 @@ public class ArpSpoofFragment extends Fragment {
         });
 
         return view;
-
-
     }
 
     private void start_arp_spoof(String use_interface, String source_ip, String source_mac, String target_ip, String target_mac) {
@@ -88,7 +85,6 @@ public class ArpSpoofFragment extends Fragment {
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                Log.d("TEST",output.toString());
                                 info_view.setText(output.toString());
                             }
                         });
