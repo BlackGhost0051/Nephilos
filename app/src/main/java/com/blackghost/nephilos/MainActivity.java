@@ -46,8 +46,7 @@ public class MainActivity extends AppCompatActivity {
         nativeLibraryDir = LibraryManager.getLibraryDir(this);
         get_interfaces();
 
-        // need add checking if there are libs so if empty use ApkManager && finding internet interfaces and add to memory && add checking ROOT access
-
+        // need add checking if there are libs so if empty use LibraryManager && finding internet interfaces and add to memory && add checking ROOT access
 
 
 /*      GET INTERFACE VALUE

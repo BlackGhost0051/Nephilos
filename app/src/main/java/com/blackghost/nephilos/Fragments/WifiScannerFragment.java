@@ -60,7 +60,7 @@ public class WifiScannerFragment extends Fragment {
         return view;
     }
 
-    private void scanWifi() {
+    private void scanWifi() { // mb add C scan_Wifi ?
         if (!wifiManager.isWifiEnabled()) {
             wifiManager.setWifiEnabled(true);
         }
