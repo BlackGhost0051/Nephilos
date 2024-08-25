@@ -2,6 +2,7 @@ package com.blackghost.nephilos;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -10,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -30,6 +32,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import android.content.SharedPreferences;
+import android.widget.Toast;
+
 import androidx.preference.PreferenceManager;
 
 public class MainActivity extends AppCompatActivity {
@@ -162,9 +166,34 @@ public class MainActivity extends AppCompatActivity {
                     });
 
                 } catch (IOException | InterruptedException e) {
+                    String message = "Error = " + e.toString() + "\n\n NEED ROOT to get the name of the interfaces!!!";
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            showAlertMessage("Root Access Required", message);
+                        }
+                    });
                     e.printStackTrace();
                 }
             }
         }).start();
+    }
+
+    private void showAlertMessage(String title, String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.setCancelable(false);
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }
