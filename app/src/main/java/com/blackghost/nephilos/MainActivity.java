@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         nativeLibraryDir = LibraryManager.getLibraryDir(this);
-        get_interfaces();
+        //get_interfaces();
 
         // need add checking if there are libs so if empty use LibraryManager && finding internet interfaces and add to memory && add checking ROOT access
 
