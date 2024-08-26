@@ -1,9 +1,11 @@
 package com.blackghost.nephilos.Fragments;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceManager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -44,6 +46,8 @@ public class ArpSpoofFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_arp_spoof, container, false);
 
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
         button = view.findViewById(R.id.button);
         info_view = view.findViewById(R.id.info_view);
 
@@ -51,7 +55,8 @@ public class ArpSpoofFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                start_arp_spoof("wlan0","192.168.0.2","ff:ff:ff:ff:ff:ff","192.168.0.1","ff:ff:ff:ff:ff:ff");
+                String interfaceName = sharedPreferences.getString("interface_name", "wlan0");
+                start_arp_spoof(interfaceName,"192.168.0.2","ff:ff:ff:ff:ff:ff","192.168.0.1","ff:ff:ff:ff:ff:ff");
             }
         });
 
