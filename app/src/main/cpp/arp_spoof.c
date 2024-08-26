@@ -82,16 +82,10 @@ void str_to_mac(unsigned char mac[ETH_ALEN],const char *str){
 }
 
 int main(int argc, char **argv){
-    printf("Test 1\n");
+    printf("START\n\n");
     fflush(stdout);
-    sleep(2);
 
-    printf("Test 2\n");
-    fflush(stdout);
-    sleep(2);
-
-
-    /*char *my_interface = "wlan0"; // interface name
+    char *my_interface = "wlan0"; // interface name
 
     unsigned long dest_ip=inet_addr(argv[1]);
     unsigned long src_ip=inet_addr(argv[3]);
@@ -111,5 +105,5 @@ int main(int argc, char **argv){
     while(1){
         arp_reply_send(my_interface, src_ip, src_mac, dest_ip, dest_mac);
         sleep(1);
-    }*/
+    }
 }
