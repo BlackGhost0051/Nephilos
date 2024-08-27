@@ -27,6 +27,7 @@ Now includes:
 - WIFI scanner
 - MAC scanner
 - Port scanner ( TCP )
+- Request send ( test )
 - ARP spoof ( test )
 
 Planning:
@@ -34,5 +35,5 @@ Planning:
 - ICMP send
 - Request send ( POST, GET...)
 - URL to IP
-- Beacon Flooding Attack
-- Deauthenticate Clients
+- Beacon Flooding Attack ( 802.11 fake AP)
+- Deauthenticate Clients ( 802.11 )
