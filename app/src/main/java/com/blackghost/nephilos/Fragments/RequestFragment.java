@@ -7,16 +7,18 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.AdapterView;
+import android.widget.TextView;
 
 import com.blackghost.nephilos.Managers.RequestManager;
 import com.blackghost.nephilos.R;
 
 
 public class RequestFragment extends Fragment {
-
 
     public RequestFragment() {
         // Required empty public constructor
@@ -36,11 +38,14 @@ public class RequestFragment extends Fragment {
 
         RequestManager requestManager = new RequestManager();
 
-        requestManager.send_GET("https://nmap.org");
 
         Spinner requestTypeSpinner = view.findViewById(R.id.request_type_spinner);
         LinearLayout getLayout = view.findViewById(R.id.get_layout);
         LinearLayout postLayout = view.findViewById(R.id.post_layout);
+
+        EditText get_input_url = view.findViewById(R.id.get_input_url);
+        TextView get_info = view.findViewById(R.id.get_responce_TextView);
+        Button send_GET_btn = view.findViewById(R.id.send_GET_btn);
 
         requestTypeSpinner.setSelection(0);
         getLayout.setVisibility(View.VISIBLE);
@@ -62,6 +67,16 @@ public class RequestFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+
+        send_GET_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = String.valueOf(get_input_url.getText());
+                requestManager.send_GET(url);
+                //get_info.setText(requestManager.send_GET(url));
             }
         });
 
