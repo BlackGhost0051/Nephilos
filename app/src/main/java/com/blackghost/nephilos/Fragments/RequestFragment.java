@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.AdapterView;
 
+import com.blackghost.nephilos.Managers.RequestManager;
 import com.blackghost.nephilos.R;
 
 
@@ -32,6 +33,10 @@ public class RequestFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_request, container, false);
+
+        RequestManager requestManager = new RequestManager();
+
+        requestManager.send_GET("https://nmap.org");
 
         Spinner requestTypeSpinner = view.findViewById(R.id.request_type_spinner);
         LinearLayout getLayout = view.findViewById(R.id.get_layout);
