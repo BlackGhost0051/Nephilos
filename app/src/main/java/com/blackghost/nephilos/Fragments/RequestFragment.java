@@ -14,10 +14,10 @@ import android.widget.AdapterView;
 import com.blackghost.nephilos.R;
 
 
-public class HTTPRequestFragment extends Fragment {
+public class RequestFragment extends Fragment {
 
 
-    public HTTPRequestFragment() {
+    public RequestFragment() {
         // Required empty public constructor
     }
 

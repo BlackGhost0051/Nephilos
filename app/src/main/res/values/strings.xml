@@ -11,7 +11,7 @@
     <string name="toolbar_wifi_scanner">Wifi Scanner</string>
     <string name="toolbar_port_scanner">Port Scanner</string>
     <string name="toolbar_mac_scanner">Mac Scanner</string>
-    <string name="toolbar_request">HTTP Request</string>
+    <string name="toolbar_request">Send Request</string>
     <string name="toolbar_arp_spoof">Arp Spoof</string>
     <string name="toolbar_settings">Settings</string>
 

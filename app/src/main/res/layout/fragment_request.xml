@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.HTTPRequestFragment">
+    tools:context=".Fragments.RequestFragment">
 
     <Spinner
         android:id="@+id/request_type_spinner"

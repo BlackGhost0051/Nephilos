@@ -20,7 +20,7 @@ import com.blackghost.nephilos.Fragments.ArpSpoofFragment;
 import com.blackghost.nephilos.Fragments.MacScannerFragment;
 import com.blackghost.nephilos.Fragments.MainFragment;
 import com.blackghost.nephilos.Fragments.PortScannerFragment;
-import com.blackghost.nephilos.Fragments.HTTPRequestFragment;
+import com.blackghost.nephilos.Fragments.RequestFragment;
 import com.blackghost.nephilos.Fragments.SettingsFragment;
 import com.blackghost.nephilos.Fragments.WifiScannerFragment;
 import com.blackghost.nephilos.Managers.LibraryManager;
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.request :
                         drawerLayout.closeDrawer(GravityCompat.START);
                         toolbar.setTitle(R.string.toolbar_request);
-                        fragmentR(new HTTPRequestFragment());
+                        fragmentR(new RequestFragment());
                         break;
 
                     case R.id.arp_spoof:
