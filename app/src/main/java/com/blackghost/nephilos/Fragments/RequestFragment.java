@@ -75,7 +75,9 @@ public class RequestFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String url = String.valueOf(get_input_url.getText());
-                requestManager.send_GET(url);
+
+                String urlTest = url;
+                requestManager.send_GET(urlTest);
                 //get_info.setText(requestManager.send_GET(url));
             }
         });
