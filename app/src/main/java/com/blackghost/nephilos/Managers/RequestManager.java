@@ -1,6 +1,10 @@
 package com.blackghost.nephilos.Managers;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
+
+import com.blackghost.nephilos.Interfaces.RequestInterface;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -9,8 +13,12 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class RequestManager {
-    public RequestManager(){
+    private RequestInterface requestInterface;
+    private Handler handler = new Handler(Looper.getMainLooper());
 
+
+    public RequestManager(RequestInterface requestInterface){
+        this.requestInterface = requestInterface;
     }
 
     public void send_GET(String urlString){
@@ -36,10 +44,13 @@ public class RequestManager {
                     connection.disconnect();
 
                     Log.d("Content", content.toString());
+                    handler.post(() -> requestInterface.GET_request(content.toString()));
                 } else {
                     // failed
+                    handler.post(() -> requestInterface.GET_request("Failed!!!"));
                 }
            } catch (Exception e){
+                handler.post(() -> requestInterface.GET_request("Exception = " + e.toString()));
                 e.printStackTrace();
            }
         });

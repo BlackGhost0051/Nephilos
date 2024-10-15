@@ -14,11 +14,14 @@ import android.widget.Spinner;
 import android.widget.AdapterView;
 import android.widget.TextView;
 
+import com.blackghost.nephilos.Interfaces.RequestInterface;
 import com.blackghost.nephilos.Managers.RequestManager;
 import com.blackghost.nephilos.R;
 
 
-public class RequestFragment extends Fragment {
+public class RequestFragment extends Fragment implements RequestInterface {
+
+    TextView get_info;
 
     public RequestFragment() {
         // Required empty public constructor
@@ -36,7 +39,7 @@ public class RequestFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_request, container, false);
 
-        RequestManager requestManager = new RequestManager();
+        RequestManager requestManager = new RequestManager(this);
 
 
         Spinner requestTypeSpinner = view.findViewById(R.id.request_type_spinner);
@@ -44,7 +47,7 @@ public class RequestFragment extends Fragment {
         LinearLayout postLayout = view.findViewById(R.id.post_layout);
 
         EditText get_input_url = view.findViewById(R.id.get_input_url);
-        TextView get_info = view.findViewById(R.id.get_responce_TextView);
+        get_info = view.findViewById(R.id.get_responce_TextView);
         Button send_GET_btn = view.findViewById(R.id.send_GET_btn);
 
         requestTypeSpinner.setSelection(0);
@@ -75,13 +78,20 @@ public class RequestFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String url = String.valueOf(get_input_url.getText());
-
-                String urlTest = url;
-                requestManager.send_GET(urlTest);
-                //get_info.setText(requestManager.send_GET(url));
+                requestManager.send_GET(url);
             }
         });
 
         return view;
+    }
+
+    @Override
+    public void GET_request(String request) {
+        get_info.setText(request);
+    }
+
+    @Override
+    public void POST_request(String request) {
+
     }
 }
