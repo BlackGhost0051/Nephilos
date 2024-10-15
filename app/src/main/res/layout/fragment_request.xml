@@ -55,13 +55,23 @@
             android:hint="Enter URL"
             />
 
-        <TextView
-            android:id="@+id/get_responce_TextView"
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:textColor="@color/white"
             android:layout_weight="0.6"
-            />
+            >
+            <TextView
+                android:id="@+id/get_responce_TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:padding="25dp"
+
+                android:textIsSelectable="true"
+                />
+        </ScrollView>
+
 
         <Button
             android:id="@+id/send_GET_btn"
