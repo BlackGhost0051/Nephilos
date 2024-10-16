@@ -58,7 +58,27 @@ public class RequestManager {
         thread.start();
     }
 
-    public void send_POST(){
+    public void send_POST(String urlString){
+        Thread thread = new Thread(() -> {
+            try{
+                URL url = new URL(urlString);
 
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("POST");
+
+                int responceCode = connection.getResponseCode();
+
+                if(responceCode == HttpURLConnection.HTTP_OK){
+
+                } else {
+
+                }
+
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        });
+
+        thread.start();
     }
 }
