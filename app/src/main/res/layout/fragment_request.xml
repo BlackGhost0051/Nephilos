@@ -97,7 +97,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/request_type_spinner"
-        tools:visibility="gone">
+        tools:visibility="visible">
+
+        <Spinner
+            android:id="@+id/POST_content_type"
+
+            style="@style/spinner_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:entries="@array/content_types"
+            />
 
         <TextView
             android:layout_width="wrap_content"

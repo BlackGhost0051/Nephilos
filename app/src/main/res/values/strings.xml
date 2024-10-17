@@ -58,6 +58,13 @@
         <item>POST</item>
     </string-array>
 
+    <string-array name="content_types">
+        <item>application/x-www-form-urlencoded</item>
+        <item>application/json</item>
+        <item>text/plain</item>
+        <item>multipart/form-data</item>
+    </string-array>
+
 
 
 </resources>

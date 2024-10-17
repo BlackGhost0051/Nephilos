@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +44,7 @@ public class RequestFragment extends Fragment implements RequestInterface {
 
 
         Spinner requestTypeSpinner = view.findViewById(R.id.request_type_spinner);
+        Spinner postContentTypeSpinner = view.findViewById(R.id.POST_content_type);
         LinearLayout getLayout = view.findViewById(R.id.get_layout);
         LinearLayout postLayout = view.findViewById(R.id.post_layout);
 
@@ -53,6 +55,8 @@ public class RequestFragment extends Fragment implements RequestInterface {
         requestTypeSpinner.setSelection(0);
         getLayout.setVisibility(View.VISIBLE);
         postLayout.setVisibility(View.GONE);
+
+        Log.d("Content type", postContentTypeSpinner.getSelectedItem().toString());
 
         requestTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
