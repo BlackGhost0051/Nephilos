@@ -46,10 +46,6 @@
         <item>wlan0</item>
     </string-array>
 
-    <string-array name="interface_values">
-        <item>wlan0</item>
-    </string-array>
-
 
 
     <!-- Array -->

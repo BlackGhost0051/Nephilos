@@ -15,7 +15,7 @@
             android:title="@string/interface_name_title"
             android:summary="@string/interface_name_summary"
             android:entries="@array/interface_names"
-            android:entryValues="@array/interface_values"
+            android:entryValues="@array/interface_names"
             android:defaultValue="wlan0"
             />
     </PreferenceCategory>
