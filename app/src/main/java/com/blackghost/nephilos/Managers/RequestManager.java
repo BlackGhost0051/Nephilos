@@ -67,15 +67,14 @@ public class RequestManager {
                 connection.setRequestMethod("POST");
                 connection.setDoOutput(true);
 
-                connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                connection.setRequestProperty("Content-Type", contentType);
                 connection.setRequestProperty("charset", "utf-8");
 
-                if(contentType == ""){
-                    // application/x-www-form-urlencoded
-                    // application/json
-                    // text/plain
-                    // multipart/form-data
-                }
+                // application/x-www-form-urlencoded
+                // application/json
+                // text/plain
+                // multipart/form-data
+
 
                 try (OutputStream os = connection.getOutputStream()) {
                     byte[] input = postData.getBytes("utf-8");
