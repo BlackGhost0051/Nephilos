@@ -47,7 +47,7 @@ public class RequestManager {
                     handler.post(() -> requestInterface.GET_request(content.toString()));
                 } else {
                     // failed
-                    handler.post(() -> requestInterface.GET_request("Failed!!!"));
+                    handler.post(() -> requestInterface.GET_request("Failed with response code: " + String.valueOf(responceCode)));
                 }
            } catch (Exception e){
                 handler.post(() -> requestInterface.GET_request("Exception = " + e.toString()));
@@ -58,23 +58,48 @@ public class RequestManager {
         thread.start();
     }
 
-    public void send_POST(String urlString){
+    public void send_POST(String urlString, String postData, String contentType){
         Thread thread = new Thread(() -> {
             try{
                 URL url = new URL(urlString);
 
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("POST");
+                connection.setDoOutput(true);
+
+                connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                connection.setRequestProperty("charset", "utf-8");
+
+                if(contentType == ""){
+                    // application/x-www-form-urlencoded
+                    // application/json
+                    // text/plain
+                    // multipart/form-data
+                }
+
+                try (OutputStream os = connection.getOutputStream()) {
+                    byte[] input = postData.getBytes("utf-8");
+                    os.write(input, 0, input.length);
+                }
 
                 int responceCode = connection.getResponseCode();
 
                 if(responceCode == HttpURLConnection.HTTP_OK){
-
+                    try (BufferedReader reader = new BufferedReader(
+                            new InputStreamReader(connection.getInputStream(), "utf-8"))) {
+                        StringBuilder response = new StringBuilder();
+                        String responseLine;
+                        while ((responseLine = reader.readLine()) != null) {
+                            response.append(responseLine.trim());
+                        }
+                        handler.post(() -> requestInterface.POST_request(response.toString()));
+                    }
                 } else {
-
+                    handler.post(() -> requestInterface.POST_request("Failed with response code: " + String.valueOf(responceCode)));
                 }
 
             } catch (Exception e){
+                handler.post(() -> requestInterface.POST_request("Exception = " + e.toString()));
                 e.printStackTrace();
             }
         });
