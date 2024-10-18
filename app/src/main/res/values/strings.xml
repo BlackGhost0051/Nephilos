@@ -52,6 +52,13 @@
     <string-array name="request_types">
         <item>GET</item>
         <item>POST</item>
+        <item>PUT</item>
+        <item>DELETE</item>
+        <item>PATCH</item>
+        <item>HEAD</item>
+        <item>OPTIONS</item>
+        <item>TRACE</item>
+        <item>CONNECT</item>
     </string-array>
 
     <string-array name="content_types">
