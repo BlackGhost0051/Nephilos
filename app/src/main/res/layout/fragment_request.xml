@@ -79,7 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Send Request" />
+            android:text="Send GET" />
     </LinearLayout>
 
     <!-- POST -->
@@ -109,11 +109,42 @@
             android:entries="@array/content_types"
             />
 
-        <TextView
+        <EditText
+            android:hint="Enter URL"
+            style="@style/edit_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <EditText
+            android:hint="Enter POST data"
+            style="@style/edit_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6"
+            android:padding="25dp"
+            >
+            <TextView
+                android:id="@+id/post_responce_TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+
+                android:textIsSelectable="true"
+                />
+        </ScrollView>
+
+        <Button
+            android:id="@+id/send_POST_btn"
+            style="@style/button_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="POST"
-            android:textColor="@color/white" />
+            android:layout_gravity="center_horizontal"
+            android:text="Send POST" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
