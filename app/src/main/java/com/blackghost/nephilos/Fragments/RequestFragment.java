@@ -45,8 +45,17 @@ public class RequestFragment extends Fragment implements RequestInterface {
 
         Spinner requestTypeSpinner = view.findViewById(R.id.request_type_spinner);
         Spinner postContentTypeSpinner = view.findViewById(R.id.POST_content_type);
-        LinearLayout getLayout = view.findViewById(R.id.get_layout);
-        LinearLayout postLayout = view.findViewById(R.id.post_layout);
+
+        LinearLayout getLayout = view.findViewById(R.id.GET_layout);
+        LinearLayout postLayout = view.findViewById(R.id.POST_layout);
+        LinearLayout putLayout = view.findViewById(R.id.PUT_layout);
+        LinearLayout deleteLayout = view.findViewById(R.id.DELETE_layout);
+        LinearLayout patchLayout = view.findViewById(R.id.PATCH_layout);
+        LinearLayout headLayout = view.findViewById(R.id.HEAD_layout);
+        LinearLayout optionsLayout = view.findViewById(R.id.OPTIONS_layout);
+        LinearLayout traceLayout = view.findViewById(R.id.TRACE_layout);
+        LinearLayout connectLayout = view.findViewById(R.id.CONNECT_layout);
+
 
         EditText get_input_url = view.findViewById(R.id.get_input_url);
         get_info = view.findViewById(R.id.get_responce_TextView);
@@ -66,9 +75,93 @@ public class RequestFragment extends Fragment implements RequestInterface {
                 if (selectedRequest.equals("GET")) {
                     getLayout.setVisibility(View.VISIBLE);
                     postLayout.setVisibility(View.GONE);
+                    putLayout.setVisibility(View.GONE);
+                    patchLayout.setVisibility(View.GONE);
+                    deleteLayout.setVisibility(View.GONE);
+                    headLayout.setVisibility(View.GONE);
+                    optionsLayout.setVisibility(View.GONE);
+                    traceLayout.setVisibility(View.GONE);
+                    connectLayout.setVisibility(View.GONE);
                 } else if (selectedRequest.equals("POST")) {
                     getLayout.setVisibility(View.GONE);
                     postLayout.setVisibility(View.VISIBLE);
+                    putLayout.setVisibility(View.GONE);
+                    patchLayout.setVisibility(View.GONE);
+                    deleteLayout.setVisibility(View.GONE);
+                    headLayout.setVisibility(View.GONE);
+                    optionsLayout.setVisibility(View.GONE);
+                    traceLayout.setVisibility(View.GONE);
+                    connectLayout.setVisibility(View.GONE);
+                } else if (selectedRequest.equals("PUT")){
+                    getLayout.setVisibility(View.GONE);
+                    postLayout.setVisibility(View.GONE);
+                    putLayout.setVisibility(View.VISIBLE);
+                    patchLayout.setVisibility(View.GONE);
+                    deleteLayout.setVisibility(View.GONE);
+                    headLayout.setVisibility(View.GONE);
+                    optionsLayout.setVisibility(View.GONE);
+                    traceLayout.setVisibility(View.GONE);
+                    connectLayout.setVisibility(View.GONE);
+                } else if (selectedRequest.equals("PATCH")){
+                    getLayout.setVisibility(View.GONE);
+                    postLayout.setVisibility(View.GONE);
+                    putLayout.setVisibility(View.GONE);
+                    patchLayout.setVisibility(View.VISIBLE);
+                    deleteLayout.setVisibility(View.GONE);
+                    headLayout.setVisibility(View.GONE);
+                    optionsLayout.setVisibility(View.GONE);
+                    traceLayout.setVisibility(View.GONE);
+                    connectLayout.setVisibility(View.GONE);
+                } else if (selectedRequest.equals("DELETE")){
+                    getLayout.setVisibility(View.GONE);
+                    postLayout.setVisibility(View.GONE);
+                    putLayout.setVisibility(View.GONE);
+                    patchLayout.setVisibility(View.GONE);
+                    deleteLayout.setVisibility(View.VISIBLE);
+                    headLayout.setVisibility(View.GONE);
+                    optionsLayout.setVisibility(View.GONE);
+                    traceLayout.setVisibility(View.GONE);
+                    connectLayout.setVisibility(View.GONE);
+                } else if (selectedRequest.equals("HEAD")){
+                    getLayout.setVisibility(View.GONE);
+                    postLayout.setVisibility(View.GONE);
+                    putLayout.setVisibility(View.GONE);
+                    patchLayout.setVisibility(View.GONE);
+                    deleteLayout.setVisibility(View.GONE);
+                    headLayout.setVisibility(View.VISIBLE);
+                    optionsLayout.setVisibility(View.GONE);
+                    traceLayout.setVisibility(View.GONE);
+                    connectLayout.setVisibility(View.GONE);
+                } else if (selectedRequest.equals("OPTIONS")){
+                    getLayout.setVisibility(View.GONE);
+                    postLayout.setVisibility(View.GONE);
+                    putLayout.setVisibility(View.GONE);
+                    patchLayout.setVisibility(View.GONE);
+                    deleteLayout.setVisibility(View.GONE);
+                    headLayout.setVisibility(View.GONE);
+                    optionsLayout.setVisibility(View.VISIBLE);
+                    traceLayout.setVisibility(View.GONE);
+                    connectLayout.setVisibility(View.GONE);
+                } else if (selectedRequest.equals("TRACE")){
+                    getLayout.setVisibility(View.GONE);
+                    postLayout.setVisibility(View.GONE);
+                    putLayout.setVisibility(View.GONE);
+                    patchLayout.setVisibility(View.GONE);
+                    deleteLayout.setVisibility(View.GONE);
+                    headLayout.setVisibility(View.GONE);
+                    optionsLayout.setVisibility(View.GONE);
+                    traceLayout.setVisibility(View.VISIBLE);
+                    connectLayout.setVisibility(View.GONE);
+                } else if (selectedRequest.equals("CONNECT")){
+                    getLayout.setVisibility(View.GONE);
+                    postLayout.setVisibility(View.GONE);
+                    putLayout.setVisibility(View.GONE);
+                    patchLayout.setVisibility(View.GONE);
+                    deleteLayout.setVisibility(View.GONE);
+                    headLayout.setVisibility(View.GONE);
+                    optionsLayout.setVisibility(View.GONE);
+                    traceLayout.setVisibility(View.GONE);
+                    connectLayout.setVisibility(View.VISIBLE);
                 }
             }
 
