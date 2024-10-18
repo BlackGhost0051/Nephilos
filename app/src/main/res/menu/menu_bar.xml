@@ -9,7 +9,7 @@
 
         <item
             android:id="@+id/wifi_scanner"
-            android:icon="@drawable/ic_baseline_wifi_24"
+            android:icon="@drawable/wifi_24"
             android:title="@string/toolbar_wifi_scanner"
             />
 
@@ -21,7 +21,7 @@
 
         <item
             android:id="@+id/port_scanner"
-            android:icon="@drawable/ic_baseline_storage_24"
+            android:icon="@drawable/storage_24"
             android:title="@string/toolbar_port_scanner"
 
             />
@@ -48,7 +48,7 @@
         <menu>
             <item
                 android:id="@+id/settings"
-                android:icon="@drawable/baseline_settings_24"
+                android:icon="@drawable/settings_24"
                 android:title="@string/toolbar_settings"
                 />
         </menu>
