@@ -28,7 +28,7 @@
 
         <item
             android:id="@+id/request"
-            android:icon="@color/white"
+            android:icon="@drawable/http_24"
             android:title="@string/toolbar_request"
             />
 
