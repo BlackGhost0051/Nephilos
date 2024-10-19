@@ -183,47 +183,47 @@ public class RequestFragment extends Fragment implements RequestInterface {
     }
 
     @Override
-    public void GET_request(String request) {
-        get_info.setText(request);
+    public void GET_request(String response) {
+        get_info.setText(response);
     }
 
     @Override
-    public void POST_request(String request) {
-
-    }
-
-    @Override
-    public void PUT_request(String request) {
+    public void POST_request(String response) {
 
     }
 
     @Override
-    public void DELETE_request(String request) {
+    public void PUT_request(String response) {
 
     }
 
     @Override
-    public void PATCH_request(String request) {
+    public void DELETE_request(String response) {
 
     }
 
     @Override
-    public void HEAD_request(String request) {
+    public void PATCH_request(String response) {
 
     }
 
     @Override
-    public void OPTIONS_request(String request) {
+    public void HEAD_request(String response) {
 
     }
 
     @Override
-    public void TRACE_request(String request) {
+    public void OPTIONS_request(String response) {
 
     }
 
     @Override
-    public void CONNECT_request(String request) {
+    public void TRACE_request(String response) {
+
+    }
+
+    @Override
+    public void CONNECT_request(String response) {
 
     }
 }
