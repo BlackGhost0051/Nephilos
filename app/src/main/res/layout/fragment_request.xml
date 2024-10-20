@@ -168,6 +168,21 @@
             android:layout_height="match_parent"
             android:text="In process PUT"
             />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6"
+            android:padding="25dp"
+            >
+            <TextView
+                android:id="@+id/put_responce_TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+
+                android:textIsSelectable="true"
+                />
+        </ScrollView>
     </LinearLayout>
 
     <LinearLayout
@@ -191,6 +206,21 @@
             android:layout_height="match_parent"
             android:text="In process DELETE"
             />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6"
+            android:padding="25dp"
+            >
+            <TextView
+                android:id="@+id/delete_responce_TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+
+                android:textIsSelectable="true"
+                />
+        </ScrollView>
     </LinearLayout>
 
     <LinearLayout
@@ -214,6 +244,21 @@
             android:layout_height="match_parent"
             android:text="In process PATCH"
             />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6"
+            android:padding="25dp"
+            >
+            <TextView
+                android:id="@+id/patch_responce_TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+
+                android:textIsSelectable="true"
+                />
+        </ScrollView>
     </LinearLayout>
 
     <LinearLayout
@@ -237,6 +282,21 @@
             android:layout_height="match_parent"
             android:text="In process HEAD"
             />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6"
+            android:padding="25dp"
+            >
+            <TextView
+                android:id="@+id/head_responce_TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+
+                android:textIsSelectable="true"
+                />
+        </ScrollView>
     </LinearLayout>
 
     <LinearLayout
@@ -260,6 +320,21 @@
             android:layout_height="match_parent"
             android:text="In process OPTIONS"
             />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6"
+            android:padding="25dp"
+            >
+            <TextView
+                android:id="@+id/options_responce_TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+
+                android:textIsSelectable="true"
+                />
+        </ScrollView>
     </LinearLayout>
 
     <LinearLayout
@@ -283,6 +358,21 @@
             android:layout_height="match_parent"
             android:text="In process TRACE"
             />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6"
+            android:padding="25dp"
+            >
+            <TextView
+                android:id="@+id/trace_responce_TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+
+                android:textIsSelectable="true"
+                />
+        </ScrollView>
     </LinearLayout>
 
     <LinearLayout
@@ -306,6 +396,21 @@
             android:layout_height="match_parent"
             android:text="In process CONNECT"
             />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6"
+            android:padding="25dp"
+            >
+            <TextView
+                android:id="@+id/connect_responce_TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+
+                android:textIsSelectable="true"
+                />
+        </ScrollView>
     </LinearLayout>
 
 
