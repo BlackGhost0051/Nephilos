@@ -22,7 +22,15 @@ import com.blackghost.nephilos.R;
 
 public class RequestFragment extends Fragment implements RequestInterface {
 
-    TextView get_info;
+    private TextView get_info;
+    private TextView post_info;
+    private TextView put_info;
+    private TextView delete_info;
+    private TextView patch_info;
+    private TextView head_info;
+    private TextView options_info;
+    private TextView trace_info;
+    private TextView connect_info;
 
     public RequestFragment() {
         // Required empty public constructor
