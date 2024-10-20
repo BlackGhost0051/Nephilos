@@ -66,7 +66,17 @@ public class RequestFragment extends Fragment implements RequestInterface {
 
 
         EditText get_input_url = view.findViewById(R.id.get_input_url);
+
         get_info = view.findViewById(R.id.get_responce_TextView);
+        post_info = view.findViewById(R.id.post_responce_TextView);
+        put_info = view.findViewById(R.id.put_responce_TextView);
+        delete_info = view.findViewById(R.id.delete_responce_TextView);
+        patch_info = view.findViewById(R.id.patch_responce_TextView);
+        head_info = view.findViewById(R.id.head_responce_TextView);
+        options_info = view.findViewById(R.id.options_responce_TextView);
+        trace_info = view.findViewById(R.id.trace_responce_TextView);
+        connect_info = view.findViewById(R.id.connect_responce_TextView);
+
         Button send_GET_btn = view.findViewById(R.id.send_GET_btn);
 
         requestTypeSpinner.setSelection(0);
