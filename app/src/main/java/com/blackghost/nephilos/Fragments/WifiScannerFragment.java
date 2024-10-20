@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +44,8 @@ public class WifiScannerFragment extends Fragment {
     private WifiManager wifiManager;
     private TextView infoTextView;
 
+    private ProgressBar progressBar;
+
     public WifiScannerFragment() {
         // Required empty public constructor
     }
@@ -60,12 +63,14 @@ public class WifiScannerFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_wifi_scanner, container, false);
 
         infoTextView = view.findViewById(R.id.infoTextView);
+        progressBar = view.findViewById(R.id.progress_bar);
 
         Button scanButton = view.findViewById(R.id.scanButton);
         scanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 checkLocationAndScanWifi();
+                progressBar.setVisibility(View.VISIBLE);
             }
         });
 
@@ -152,6 +157,7 @@ public class WifiScannerFragment extends Fragment {
                 }
 
                 String wifiInfo = wifiInfoBuilder.toString();
+                progressBar.setVisibility(View.GONE);
                 infoTextView.setText(wifiInfo);
 
             } catch (SecurityException e) {

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.AdapterView;
 import android.widget.TextView;
@@ -32,6 +33,8 @@ public class RequestFragment extends Fragment implements RequestInterface {
     private TextView trace_info;
     private TextView connect_info;
 
+    private ProgressBar progressBar;
+
     public RequestFragment() {
         // Required empty public constructor
     }
@@ -50,6 +53,7 @@ public class RequestFragment extends Fragment implements RequestInterface {
 
         RequestManager requestManager = new RequestManager(this);
 
+        progressBar = view.findViewById(R.id.progress_bar);
 
         Spinner requestTypeSpinner = view.findViewById(R.id.request_type_spinner);
         Spinner postContentTypeSpinner = view.findViewById(R.id.POST_content_type);
@@ -193,6 +197,8 @@ public class RequestFragment extends Fragment implements RequestInterface {
             @Override
             public void onClick(View view) {
                 String url = String.valueOf(get_input_url.getText());
+                get_info.setText("");
+                progressBar.setVisibility(View.VISIBLE);
                 requestManager.send_GET(url);
             }
         });
@@ -202,46 +208,47 @@ public class RequestFragment extends Fragment implements RequestInterface {
 
     @Override
     public void GET_request(String response) {
+        progressBar.setVisibility(View.GONE);
         get_info.setText(response);
     }
 
     @Override
     public void POST_request(String response) {
-
+        post_info.setText(response);
     }
 
     @Override
     public void PUT_request(String response) {
-
+        put_info.setText(response);
     }
 
     @Override
     public void DELETE_request(String response) {
-
+        delete_info.setText(response);
     }
 
     @Override
     public void PATCH_request(String response) {
-
+        patch_info.setText(response);
     }
 
     @Override
     public void HEAD_request(String response) {
-
+        head_info.setText(response);
     }
 
     @Override
     public void OPTIONS_request(String response) {
-
+        options_info.setText(response);
     }
 
     @Override
     public void TRACE_request(String response) {
-
+        trace_info.setText(response);
     }
 
     @Override
     public void CONNECT_request(String response) {
-
+        connect_info.setText(response);
     }
 }
