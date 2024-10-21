@@ -70,6 +70,9 @@ public class RequestFragment extends Fragment implements RequestInterface {
 
 
         EditText get_input_url = view.findViewById(R.id.get_input_url);
+        EditText post_input_url = view.findViewById(R.id.post_input_url);
+
+        EditText post_data = view.findViewById(R.id.post_data);
 
         get_info = view.findViewById(R.id.get_responce_TextView);
         post_info = view.findViewById(R.id.post_responce_TextView);
@@ -82,12 +85,11 @@ public class RequestFragment extends Fragment implements RequestInterface {
         connect_info = view.findViewById(R.id.connect_responce_TextView);
 
         Button send_GET_btn = view.findViewById(R.id.send_GET_btn);
+        Button send_POST_btn = view.findViewById(R.id.send_POST_btn);
 
         requestTypeSpinner.setSelection(0);
         getLayout.setVisibility(View.VISIBLE);
         postLayout.setVisibility(View.GONE);
-
-        Log.d("Content type", postContentTypeSpinner.getSelectedItem().toString());
 
         requestTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -203,6 +205,17 @@ public class RequestFragment extends Fragment implements RequestInterface {
             }
         });
 
+        send_POST_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = String.valueOf(post_input_url.getText());
+                String data = String.valueOf(post_data.getText());
+                post_info.setText("");
+                progressBar.setVisibility(View.VISIBLE);
+                requestManager.send_POST(url,data,postContentTypeSpinner.getSelectedItem().toString());
+            }
+        });
+
         return view;
     }
 
@@ -214,6 +227,7 @@ public class RequestFragment extends Fragment implements RequestInterface {
 
     @Override
     public void POST_request(String response) {
+        progressBar.setVisibility(View.GONE);
         post_info.setText(response);
     }
 
