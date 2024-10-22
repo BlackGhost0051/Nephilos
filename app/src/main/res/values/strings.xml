@@ -15,10 +15,17 @@
     <string name="toolbar_arp_spoof">Arp Spoof</string>
     <string name="toolbar_settings">Settings</string>
 
-
+    <!-- PortScannerFragment -->
     <string name="PortScannerFragment_EditText_ipInput_hint">Enter IP Address</string>
     <string name="PortScannerFragment_EditText_portInput_hint">Enter Ports (e.g., 124,178,13-80)</string>
 
+    <!-- RequestFragment -->
+    <string name="RequestFragment_EditText_get_input_url">Enter URL</string>
+    <string name="RequestFragment_Button_send_GET_btn">Send GET</string>
+
+    <string name="RequestFragment_EditText_post_input_url">Enter URL</string>
+    <string name="RequestFragment_EditText_post_data">Enter POST data</string>
+    <string name="RequestFragment_Button_send_POST_btn">Send POST</string>
 
     <!-- Preference -->
     <string name="interface_name_title">interface_name_title</string>

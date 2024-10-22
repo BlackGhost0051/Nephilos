@@ -63,7 +63,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter URL"
+            android:hint="@string/RequestFragment_EditText_get_input_url"
             />
 
 
@@ -90,7 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Send GET" />
+            android:text="@string/RequestFragment_Button_send_GET_btn" />
     </LinearLayout>
 
     <!-- POST -->
@@ -122,17 +122,16 @@
 
         <EditText
             android:id="@+id/post_input_url"
-            android:hint="Enter URL"
+            android:hint="@string/RequestFragment_EditText_post_input_url"
             style="@style/edit_text_style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
         <EditText
             android:id="@+id/post_data"
-            android:hint="Enter POST data"
+            android:hint="@string/RequestFragment_EditText_post_data"
             style="@style/edit_text_style"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
             />
 
         <!--
@@ -174,7 +173,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Send POST" />
+            android:text="@string/RequestFragment_Button_send_POST_btn" />
     </LinearLayout>
 
     <LinearLayout
