@@ -132,6 +132,7 @@
             android:hint="@string/RequestFragment_EditText_post_data"
             style="@style/edit_text_style"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             />
 
         <!--
