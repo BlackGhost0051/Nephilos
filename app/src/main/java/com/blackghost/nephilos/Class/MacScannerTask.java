@@ -1,15 +1,23 @@
 package com.blackghost.nephilos.Class;
 
+import android.content.Context;
+import android.net.wifi.WifiManager;
+import android.text.format.Formatter;
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.InetAddress;
 
 public class MacScannerTask {
+    private Context context;
+
+    public MacScannerTask(Context context){
+        this.context = context;
+    }
+
     public String getArpTable(){
-
-        // make ICMP send from HOST ( make c code send_icmp_to_all("192.168.0.") )
-
         try {
             Process p = Runtime.getRuntime().exec("su -c ip n show");
             BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
@@ -29,8 +37,17 @@ public class MacScannerTask {
             return "Error executing command";
         }
     }
-    public boolean pingAllIp(String host){
-        return false;
+    public void pingAllIp(){
+        try{
+            WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+            int ipAddress = wifiManager.getConnectionInfo().getIpAddress();
+            String inetAddress = Formatter.formatIpAddress(ipAddress);
+            Log.d("HOST", inetAddress);
+
+
+        } catch (Exception e){
+
+        }
     }
 
     public boolean pingIp(String ip){
