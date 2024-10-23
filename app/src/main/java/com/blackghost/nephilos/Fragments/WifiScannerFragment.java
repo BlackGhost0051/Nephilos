@@ -11,6 +11,7 @@ import android.location.LocationManager;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.blackghost.nephilos.Class.WifiScannerTask;
 import com.blackghost.nephilos.R;
 import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.location.LocationRequest;
@@ -69,6 +71,16 @@ public class WifiScannerFragment extends Fragment {
         scanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /*WifiScannerTask wifiScannerTask = new WifiScannerTask(getContext());
+                List<ScanResult> results = wifiScannerTask.scanWifi();
+
+                if (results != null) {
+                    for (ScanResult result : results) {
+                        Log.d("WifiScannerTask", "SSID: " + result.SSID + ", BSSID: " + result.BSSID);
+                    }
+                } else {
+                    Log.e("WifiScannerTask", "Wi-Fi scan failed or permissions not granted.");
+                }*/
                 checkLocationAndScanWifi();
                 progressBar.setVisibility(View.VISIBLE);
             }
