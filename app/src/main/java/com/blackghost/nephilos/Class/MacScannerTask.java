@@ -38,17 +38,35 @@ public class MacScannerTask {
         }
     }
     public void pingAllIp(){
-        try{
+        try {
             WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
             int ipAddress = wifiManager.getConnectionInfo().getIpAddress();
             String inetAddress = Formatter.formatIpAddress(ipAddress);
-            Log.d("HOST", inetAddress);
+            Log.d("HOST", "Device IP: " + inetAddress);
 
+            int subnetMask = wifiManager.getDhcpInfo().netmask;
+            int networkPrefix = ipAddress & subnetMask;
+            int numHosts = ~subnetMask;
 
-        } catch (Exception e){
+            for (int i = 1; i < numHosts; i++) {
+                int targetIp = networkPrefix + i;
+                String targetIpString = Formatter.formatIpAddress(targetIp);
+                Log.d("PING", "Pinging: " + targetIpString);
 
+                Process p = Runtime.getRuntime().exec("/system/bin/ping -c 1 " + targetIpString);
+                int status = p.waitFor();
+                if (status == 0) {
+                    Log.d("PING", targetIpString + " is reachable.");
+                } else {
+                    Log.d("PING", targetIpString + " is unreachable.");
+                }
+            }
+
+        } catch (Exception e) {
+            Log.e("ERROR", "Exception occurred: " + e.getMessage());
         }
     }
+
 
     public boolean pingIp(String ip){
         try{
