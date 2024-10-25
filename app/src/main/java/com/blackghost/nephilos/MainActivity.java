@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.blackghost.nephilos.Fragments.ArpSpoofFragment;
+import com.blackghost.nephilos.Fragments.DNSLookupFragment;
 import com.blackghost.nephilos.Fragments.MacScannerFragment;
 import com.blackghost.nephilos.Fragments.MainFragment;
 import com.blackghost.nephilos.Fragments.PortScannerFragment;
@@ -103,6 +104,11 @@ public class MainActivity extends AppCompatActivity {
                         drawerLayout.closeDrawer(GravityCompat.START);
                         toolbar.setTitle(R.string.toolbar_arp_spoof);
                         fragmentR(new ArpSpoofFragment());
+                        break;
+                    case R.id.dns_lookup:
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        toolbar.setTitle(R.string.toolbar_dns_lookup);
+                        fragmentR(new DNSLookupFragment());
                         break;
 
                     case R.id.settings:

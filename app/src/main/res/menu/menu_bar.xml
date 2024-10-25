@@ -37,6 +37,12 @@
             android:icon="@drawable/arp"
             android:title="@string/toolbar_arp_spoof"/>
 
+        <item
+            android:id="@+id/dns_lookup"
+            android:icon="@drawable/dns_24"
+            android:title="@string/toolbar_dns_lookup"
+            />
+
 
 
 

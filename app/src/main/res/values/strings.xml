@@ -13,6 +13,7 @@
     <string name="toolbar_mac_scanner">Mac Scanner</string>
     <string name="toolbar_request">Send Request</string>
     <string name="toolbar_arp_spoof">Arp Spoof</string>
+    <string name="toolbar_dns_lookup">DNS Lookup</string>
     <string name="toolbar_settings">Settings</string>
 
     <!-- PortScannerFragment -->
