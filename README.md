@@ -13,6 +13,7 @@ Android set of tools for working with the network (need ROOT).
         - [Port Scanner](#port-scanner)
         - [Send Request](#send-request)
         - [Arp Spoof](#arp-spoof)
+        - [DNS Lookup](#dns-lookup)
         - [Settings](#settings)
     - [JNILibs](#jnilibs)
         - [arp_spoof.c](#arp_spoofc)
@@ -28,6 +29,7 @@ Android set of tools for working with the network (need ROOT).
 ### Port Scanner
 ### Send Request
 ### Arp Spoof
+### DNS Lookup
 ### Settings
 
 ## JNILibs
