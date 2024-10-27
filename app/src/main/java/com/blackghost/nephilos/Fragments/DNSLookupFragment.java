@@ -18,6 +18,7 @@ public class DNSLookupFragment extends Fragment {
 
     private EditText dnsInput;
     private TextView dnsInfo;
+    private Button sendButton;
 
     public DNSLookupFragment() {
         // Required empty public constructor
@@ -37,7 +38,7 @@ public class DNSLookupFragment extends Fragment {
 
         dnsInfo = view.findViewById(R.id.dns_info);
         dnsInput = view.findViewById(R.id.dns_input);
-
+        sendButton = view.findViewById(R.id.send_btn);
         return view;
     }
 }
