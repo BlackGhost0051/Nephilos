@@ -28,6 +28,9 @@
     <string name="RequestFragment_EditText_post_data">Enter POST data</string>
     <string name="RequestFragment_Button_send_POST_btn">Send POST</string>
 
+    <!-- DNSLookupFragment -->
+    <string name="DNSLookupFragment_EditText_dns_input_hint">Enter URL</string>
+
     <!-- Preference -->
     <string name="interface_name_title">interface_name_title</string>
     <string name="interface_name_summary">interface_name_summary</string>

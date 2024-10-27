@@ -36,7 +36,7 @@ public class DNSLookupFragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_dns_lookup, container, false);
 
         dnsInfo = view.findViewById(R.id.dns_info);
-        dnsInput = view.findViewById(R.id.dns_input_ip);
+        dnsInput = view.findViewById(R.id.dns_input);
 
         return view;
     }
