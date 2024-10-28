@@ -85,16 +85,16 @@ int main(int argc, char **argv){
     printf("START\n\n");
     fflush(stdout);
 
-    char *my_interface = "wlan0"; // interface name
+    char *my_interface = argv[1]; // interface name
 
-    unsigned long dest_ip=inet_addr(argv[1]);
-    unsigned long src_ip=inet_addr(argv[3]);
+    unsigned long dest_ip=inet_addr(argv[4]);
+    unsigned long src_ip=inet_addr(argv[2]);
 
     unsigned char dest_mac[ETH_ALEN];
     unsigned char src_mac[ETH_ALEN];
 
-    str_to_mac(dest_mac, argv[2]);
-    str_to_mac(src_mac, argv[4]);
+    str_to_mac(dest_mac, argv[5]);
+    str_to_mac(src_mac, argv[3]);
 
     system("echo 1 > /proc/sys/net/ipv4/ip_forward");
     system("iptables -A FORWARD -j ACCEPT");

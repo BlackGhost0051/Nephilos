@@ -31,6 +31,12 @@ public class ArpSpoofFragment extends Fragment {
 
     private String nativeLibraryDir;
     private TextView info_view;
+
+    private EditText source_ip_input;
+    private EditText source_mac_input;
+    private EditText target_ip_input;
+    private EditText target_mac_input;
+
     Button button;
 
     @Override
@@ -51,12 +57,17 @@ public class ArpSpoofFragment extends Fragment {
         button = view.findViewById(R.id.button);
         info_view = view.findViewById(R.id.info_view);
 
+        source_ip_input = view.findViewById(R.id.source_ip_input);
+        source_mac_input = view.findViewById(R.id.source_mac_input);
+        target_ip_input = view.findViewById(R.id.target_ip_input);
+        target_mac_input = view.findViewById(R.id.target_mac_input);
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String interfaceName = sharedPreferences.getString("interface_name", "wlan0");
-                start_arp_spoof(interfaceName,"192.168.0.2","ff:ff:ff:ff:ff:ff","192.168.0.1","ff:ff:ff:ff:ff:ff");
+                start_arp_spoof(interfaceName, String.valueOf(source_ip_input.getText()), String.valueOf(source_mac_input.getText()),String.valueOf(target_ip_input.getText()),String.valueOf(target_mac_input.getText()));
             }
         });
 
@@ -75,7 +86,7 @@ public class ArpSpoofFragment extends Fragment {
                     String command = nativeLibraryDir + "/libarp_spoof.so";
                     Log.d("DIR", command);
 
-                    command += " " /*+ use_interface + " "*/ + source_ip + " " + source_mac + " " + target_ip + " " + target_mac;
+                    command += " " + use_interface + " " + source_ip + " " + source_mac + " " + target_ip + " " + target_mac;
 
                     os.writeBytes(command + "\n");
                     os.flush();
