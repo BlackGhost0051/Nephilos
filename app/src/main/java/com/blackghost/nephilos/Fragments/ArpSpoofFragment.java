@@ -37,7 +37,7 @@ public class ArpSpoofFragment extends Fragment {
     private EditText target_ip_input;
     private EditText target_mac_input;
 
-    Button button;
+    Button start_spoof_btn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,7 +54,7 @@ public class ArpSpoofFragment extends Fragment {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
-        button = view.findViewById(R.id.button);
+        start_spoof_btn = view.findViewById(R.id.start_spoof_btn);
         info_view = view.findViewById(R.id.info_view);
 
         source_ip_input = view.findViewById(R.id.source_ip_input);
@@ -63,7 +63,7 @@ public class ArpSpoofFragment extends Fragment {
         target_mac_input = view.findViewById(R.id.target_mac_input);
 
 
-        button.setOnClickListener(new View.OnClickListener() {
+        start_spoof_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String interfaceName = sharedPreferences.getString("interface_name", "wlan0");

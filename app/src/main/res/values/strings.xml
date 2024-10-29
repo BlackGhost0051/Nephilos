@@ -28,6 +28,13 @@
     <string name="RequestFragment_EditText_post_data">Enter POST data</string>
     <string name="RequestFragment_Button_send_POST_btn">Send POST</string>
 
+    <!-- ArpSpoofFragment -->
+    <string name="ArpSpoofFragment_EditText_source_ip_input_hint">Enter source IP Address</string>
+    <string name="ArpSpoofFragment_EditText_source_mac_input_hint">Enter source MAC Address</string>
+    <string name="ArpSpoofFragment_EditText_target_ip_input_hint">Enter IP Address</string>
+    <string name="ArpSpoofFragment_EditText_target_mac_input_hint">Enter MAC Address</string>
+    <string name="ArpSpoofFragment_Button_start_spoof_btn">Start Spoof</string>
+
     <!-- DNSLookupFragment -->
     <string name="DNSLookupFragment_EditText_dns_input_hint">Enter URL</string>
 
