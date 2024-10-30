@@ -37,6 +37,8 @@
 
     <!-- DNSLookupFragment -->
     <string name="DNSLookupFragment_EditText_dns_input_hint">Enter URL</string>
+    <string name="DNSLookupFragment_TextView_send_btn">Send</string>
+
 
     <!-- Preference -->
     <string name="interface_name_title">interface_name_title</string>
