@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Nephilos</string>
-    <string name="app_version">0.1</string>
+    <string name="app_version_number">0.1</string>
+    <string name="app_version_string">0.1v</string>
     <string name="gitHubUrl">https://github.com/BlackGhost0051</string>
     <string name="gitHubRepoUrl">https://github.com/BlackGhost0051/Nephilos</string>
 
