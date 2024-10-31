@@ -58,14 +58,14 @@ void arp_reply_send(char *iface_name, unsigned long src_ip, unsigned char *src_m
 
     int sock = socket(PF_PACKET, SOCK_PACKET, htons(ETH_P_ARP));
     if (sock == -1) {
-        printf("Socket creation failed");
+        printf("Socket creation failed\n");
         fflush(stdout);
         return;
     }
 
     struct sockaddr adr;
     if (strncpy(adr.sa_data, iface_name, sizeof(adr.sa_data) - 1) == NULL) {
-        printf("Interface name copy failed");
+        printf("Interface name copy failed\n");
         fflush(stdout);
         close(sock);
         return;
@@ -76,7 +76,7 @@ void arp_reply_send(char *iface_name, unsigned long src_ip, unsigned char *src_m
 
     //sendto(sock, (void*)&arp, sizeof(struct my_arp_packet), 0, (struct sockaddr *)&adr, sizeof(struct sockaddr));
     if (sendto(sock, (void*)&arp, sizeof(struct my_arp_packet), 0, (struct sockaddr*)&adr, sizeof(struct sockaddr)) == -1) {
-        printf("Failed to send ARP packet");
+        printf("Failed to send ARP packet\n");
         fflush(stdout);
         close(sock);
         return;
