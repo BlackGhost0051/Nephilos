@@ -35,6 +35,7 @@
     <string name="ArpSpoofFragment_EditText_target_ip_input_hint">Enter IP Address</string>
     <string name="ArpSpoofFragment_EditText_target_mac_input_hint">Enter MAC Address</string>
     <string name="ArpSpoofFragment_Button_start_spoof_btn">Start Spoof</string>
+    <string name="ArpSpoofFragment_Button_kill_process_btn">Kill process</string>
 
     <!-- DNSLookupFragment -->
     <string name="DNSLookupFragment_EditText_dns_input_hint">Enter URL</string>

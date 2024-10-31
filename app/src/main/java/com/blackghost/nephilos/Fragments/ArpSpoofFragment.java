@@ -30,7 +30,6 @@ public class ArpSpoofFragment extends Fragment {
 
     public ArpSpoofFragment() {}
 
-    private ProgressBar progressBar;
 
     private String nativeLibraryDir;
     private TextView info_view;
@@ -40,7 +39,8 @@ public class ArpSpoofFragment extends Fragment {
     private EditText target_ip_input;
     private EditText target_mac_input;
 
-    Button start_spoof_btn;
+    private Button start_spoof_btn;
+    private Button kill_process_btn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,9 +57,9 @@ public class ArpSpoofFragment extends Fragment {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
-        progressBar = view.findViewById(R.id.progress_bar);
 
         start_spoof_btn = view.findViewById(R.id.start_spoof_btn);
+        kill_process_btn = view.findViewById(R.id.kill_process_btn);
         info_view = view.findViewById(R.id.info_view);
 
         source_ip_input = view.findViewById(R.id.source_ip_input);
@@ -72,10 +72,34 @@ public class ArpSpoofFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String interfaceName = sharedPreferences.getString("interface_name", "wlan0");
-                progressBar.setVisibility(View.VISIBLE);
+                // progressBar.setVisibility(View.VISIBLE);
                 start_arp_spoof(interfaceName, String.valueOf(source_ip_input.getText()), String.valueOf(source_mac_input.getText()),String.valueOf(target_ip_input.getText()),String.valueOf(target_mac_input.getText()));
             }
         });
+
+        kill_process_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new Thread(new Runnable() {
+                    public void run() {
+                        try {
+                            Process suProcess = Runtime.getRuntime().exec("su");
+                            DataOutputStream os = new DataOutputStream(suProcess.getOutputStream());
+
+                            String killCommand = "killall -SIGKILL " + LibraryManager.getArpSpoofLibrary();
+                            os.writeBytes(killCommand + "\n");
+                            os.flush();
+
+                            os.close();
+                            suProcess.waitFor();
+                        } catch (IOException | InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
+            }
+        });
+
 
         return view;
     }
@@ -89,10 +113,12 @@ public class ArpSpoofFragment extends Fragment {
 
                     DataOutputStream os = new DataOutputStream(suProcess.getOutputStream());
 
-                    String command = nativeLibraryDir + "/libarp_spoof.so";
+                    String command = nativeLibraryDir + "/" + LibraryManager.getArpSpoofLibrary();
                     Log.d("DIR", command);
 
                     command += " " + use_interface + " " + source_ip + " " + source_mac + " " + target_ip + " " + target_mac;
+
+                    Log.d("Command", command);
 
                     os.writeBytes(command + "\n");
                     os.flush();

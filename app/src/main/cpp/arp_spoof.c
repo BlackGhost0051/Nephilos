@@ -57,12 +57,33 @@ void arp_reply_send(char *iface_name, unsigned long src_ip, unsigned char *src_m
     arp.ar_tip=dest_ip;
 
     int sock = socket(PF_PACKET, SOCK_PACKET, htons(ETH_P_ARP));
+    if (sock == -1) {
+        printf("Socket creation failed");
+        fflush(stdout);
+        return;
+    }
+
     struct sockaddr adr;
+    if (strncpy(adr.sa_data, iface_name, sizeof(adr.sa_data) - 1) == NULL) {
+        printf("Interface name copy failed");
+        fflush(stdout);
+        close(sock);
+        return;
+    }
 
     strcpy(adr.sa_data, iface_name);
     adr.sa_family = AF_INET;
 
-    sendto(sock, (void*)&arp, sizeof(struct my_arp_packet), 0, (struct sockaddr *)&adr, sizeof(struct sockaddr));
+    //sendto(sock, (void*)&arp, sizeof(struct my_arp_packet), 0, (struct sockaddr *)&adr, sizeof(struct sockaddr));
+    if (sendto(sock, (void*)&arp, sizeof(struct my_arp_packet), 0, (struct sockaddr*)&adr, sizeof(struct sockaddr)) == -1) {
+        printf("Failed to send ARP packet");
+        fflush(stdout);
+        close(sock);
+        return;
+    }
+
+    printf("ARP reply sent successfully\n");
+    fflush(stdout);
     close(sock);
 }
 
@@ -83,6 +104,7 @@ void str_to_mac(unsigned char mac[ETH_ALEN],const char *str){
 
 int main(int argc, char **argv){
     printf("START\n\n");
+    printf("Interface = %s\nsrc_ip = %s\nsrc_mac = %s\ndest_ip = %s\ndest_mac = %s\n", argv[1], argv[2], argv[3], argv[4], argv[5]);
     fflush(stdout);
 
     char *my_interface = argv[1]; // interface name
@@ -101,6 +123,9 @@ int main(int argc, char **argv){
 
     system("iptables -D natctrl_FORWARD -j DROP");
     system("iptables -A natctrl_FORWARD -j ACCEPT");
+
+    printf("\n");
+    fflush(stdout);
 
     while(1){
         arp_reply_send(my_interface, src_ip, src_mac, dest_ip, dest_mac);
