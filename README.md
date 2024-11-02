@@ -25,6 +25,17 @@ Android set of tools for working with the network (need ROOT).
 ## Fragments
 
 ### Wifi Scanner
+
+The Wifi Scanner fragment is responsible for scanning and displaying available Wi-Fi networks. 
+
+It allows users to view the:
+```
+SSID
+BSSID
+Signal Strength
+Encryption
+Frequency
+```
 ### Mac Scanner
 ### Port Scanner
 ### Send Request
