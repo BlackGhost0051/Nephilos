@@ -158,7 +158,7 @@ public class WifiScannerFragment extends Fragment {
                 requireContext().unregisterReceiver(this);
 
                 StringBuilder wifiInfoBuilder = new StringBuilder();
-
+                // NEED ADD CHANNEL
                 for (ScanResult result : scanResults) {
                     wifiInfoBuilder.append("SSID: ").append(result.SSID).append("\n");
                     wifiInfoBuilder.append("BSSID: ").append(result.BSSID).append("\n");
