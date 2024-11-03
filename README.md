@@ -43,6 +43,8 @@ Frequency
 ### DNS Lookup
 ### Settings
 
+The Settings fragment manages application settings and preferences, allowing users to configure preferences.
+
 ## JNILibs
 ### arp_spoof.c
 ### fill_arp_table.c
