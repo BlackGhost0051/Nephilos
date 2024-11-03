@@ -39,6 +39,9 @@ Frequency
 ### Mac Scanner
 ### Port Scanner
 ### Send Request
+
+The Send Request fragment facilitates sending HTTP requests to a specified URL. It allows users to specify request methods (GET, POST) and view the server response.
+
 ### Arp Spoof
 ### DNS Lookup
 ### Settings
