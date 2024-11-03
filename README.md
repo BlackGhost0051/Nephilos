@@ -62,13 +62,15 @@ Now includes:
 - WIFI scanner
 - MAC scanner
 - Port scanner ( TCP )
-- Request send ( test )
+- Request send ( GET POST )
 - ARP spoof ( test )
 
 Planning:
 - DHCP spoof
 - ICMP send
-- Request send ( POST, GET...)
+- Request send (...)
 - URL to IP
-- Beacon Flooding Attack ( 802.11 fake AP)
+- Beacon Flooding Attack ( 802.11 Flooding AP)
+- Free AP
+- aMITM
 - Deauthenticate Clients ( 802.11 )
