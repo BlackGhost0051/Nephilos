@@ -38,6 +38,9 @@ Frequency
 ```
 ### Mac Scanner
 ### Port Scanner
+
+The Port Scanner fragment allows users to scan TCP ports on a target IP address to check for open or closed TCP ports.
+
 ### Send Request
 
 The Send Request fragment facilitates sending HTTP requests to a specified URL. It allows users to specify request methods (GET, POST) and view the server response.
