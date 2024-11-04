@@ -37,6 +37,14 @@ Encryption
 Frequency
 ```
 ### Mac Scanner
+
+The Mac Scanner fragment scans the local network for devices and displays their MAC addresses. It provides insights into connected devices within the same subnet.
+
+I use this command to get info:
+```
+su -c ip n show
+```
+
 ### Port Scanner
 
 The Port Scanner fragment allows users to scan TCP ports on a target IP address to check for open or closed TCP ports.
