@@ -54,6 +54,12 @@ The Port Scanner fragment allows users to scan TCP ports on a target IP address 
 The Send Request fragment facilitates sending HTTP requests to a specified URL. It allows users to specify request methods (GET, POST) and view the server response.
 
 ### Arp Spoof
+
+TEST
+
+The Arp Spoof fragment enables ARP spoofing on the local network, allowing users to intercept traffic between devices by spoofing their ARP responses.
+
+
 ### DNS Lookup
 ### Settings
 
