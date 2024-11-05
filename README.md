@@ -61,6 +61,11 @@ The Arp Spoof fragment enables ARP spoofing on the local network, allowing users
 
 
 ### DNS Lookup
+
+TEST
+
+The DNS Lookup fragment allows users to perform DNS queries to resolve domain names to IP addresses.
+
 ### Settings
 
 The Settings fragment manages application settings and preferences, allowing users to configure preferences.
