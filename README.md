@@ -2,7 +2,7 @@
 
 ![](./app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp "Nephilos")
 
-Android set of tools for working with the network (need ROOT).
+Nephilos is a set of Android networking tools for advanced network management and testing. Root access is required for these features, as they provide low-level access to networking capabilities and perform actions that require system-level permissions.
 
 # Content
 
@@ -26,24 +26,24 @@ Android set of tools for working with the network (need ROOT).
 
 ### Wifi Scanner
 
-The Wifi Scanner fragment is responsible for scanning and displaying available Wi-Fi networks. 
+The Wifi Scanner fragment scans and displays available Wi-Fi networks, giving insights into nearby access points.
 
-It allows users to view the:
+Features include:
+
 ```
-SSID
-BSSID
-Signal Strength
-Encryption
-Frequency
+SSID: Network name.
+BSSID: Access point’s MAC address.
+Signal Strength: Measured in dBm.
+Encryption: Encryption type (e.g., WPA2, WEP).
+Frequency: Channel frequency in GHz (e.g., 2.4 GHz or 5 GHz bands).
 ```
+
 ### Mac Scanner
 
-The Mac Scanner fragment scans the local network for devices and displays their MAC addresses. It provides insights into connected devices within the same subnet.
+The Mac Scanner identifies devices on the local network by their MAC addresses and displays relevant device information. This is useful for discovering connected devices within the subnet.
 
-I use this command to get info:
-```
-su -c ip n show
-```
+- Command Used: `su -c ip n show`
+- Output: Lists all devices on the network with details on MAC addresses and current statuses.
 
 ### Port Scanner
 
