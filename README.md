@@ -76,6 +76,13 @@ The Settings fragment manages application settings and preferences, allowing use
 
 ## Structure
 
+```
+Nephilos
+├── README.md
+├── app
+
+```
+
 ## JNILibs
 
 ### Overview
