@@ -108,6 +108,7 @@ Now includes:
 - MAC scanner
 - Port scanner ( TCP )
 - Request send ( GET POST )
+- DNS Lookup ( test )
 - ARP spoof ( test )
 
 Planning:
