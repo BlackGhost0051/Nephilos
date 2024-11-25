@@ -11,10 +11,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.blackghost.nephilos.Fragments.ArpSpoofFragment;
 import com.blackghost.nephilos.Fragments.DNSLookupFragment;
@@ -38,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     NavigationView navigationView;
     String nativeLibraryDir;
+    TextView app_version_TextView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +76,10 @@ public class MainActivity extends AppCompatActivity {
         toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.black));
 
         fragmentR(new MainFragment());
+
+        View header = navigationView.getHeaderView(0);
+        app_version_TextView = header.findViewById(R.id.app_version);
+        app_version_TextView.setText(BuildConfig.VERSION_NAME);
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
