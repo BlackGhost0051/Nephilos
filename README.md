@@ -16,6 +16,7 @@ Nephilos is a set of Android networking tools for advanced network management an
         - [DNS Lookup](#dns-lookup)
         - [Settings](#settings)
     - [Structure](#structure)
+      - [Dir structure](#dir-structure)
     - [JNILibs](#jnilibs)
         - [Overview](#overview)
         - [Build System](#build-system)
@@ -76,6 +77,7 @@ The Settings fragment manages application settings and preferences, allowing use
 
 ## Structure
 
+### Dir structure
 ```
 Nephilos
 ├── README.md
