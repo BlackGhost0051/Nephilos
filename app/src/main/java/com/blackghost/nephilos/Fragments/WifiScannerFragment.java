@@ -156,25 +156,34 @@ public class WifiScannerFragment extends Fragment {
             try {
                 List<ScanResult> scanResults = wifiManager.getScanResults();
                 requireContext().unregisterReceiver(this);
-
-                StringBuilder wifiInfoBuilder = new StringBuilder();
+                String wifiInfo = "";
                 // NEED ADD CHANNEL
                 for (ScanResult result : scanResults) {
-                    wifiInfoBuilder.append("SSID: ").append(result.SSID).append("\n");
-                    wifiInfoBuilder.append("BSSID: ").append(result.BSSID).append("\n");
-                    wifiInfoBuilder.append("Signal Strength: ").append(result.level).append(" dBm\n");
-                    wifiInfoBuilder.append("Encryption: ").append(result.capabilities).append("\n");
-                    wifiInfoBuilder.append("Frequency: ").append(result.frequency).append(" MHz\n");
-                    wifiInfoBuilder.append("\n");
+                    wifiInfo =  "SSID: " + result.SSID + "\n" +
+                                "BSSID: " + result.BSSID + "\n" +
+                                "Signal Strength: " + result.level + " dBm\n" +
+                                "Encryption: " + result.capabilities + "\n" +
+                                "Channel: " + getChannelFromFrequency(result.frequency) + "\n" +
+                                "Frequency: " + result.frequency + "\n" +
+                                "\n";
                 }
 
-                String wifiInfo = wifiInfoBuilder.toString();
                 progressBar.setVisibility(View.GONE);
                 infoTextView.setText(wifiInfo);
 
             } catch (SecurityException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    private int getChannelFromFrequency(int frequency){
+        if(frequency >= 2412 && frequency <= 2484){
+            return (frequency - 2412) / 5 + 1;
+        } else if(frequency >= 5170 && frequency <= 5825){
+            return (frequency - 5170) / 5 + 34;
+        } else {
+            return -1;
         }
     }
 }
