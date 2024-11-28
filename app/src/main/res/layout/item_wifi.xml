@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -10,7 +9,62 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:text="ssidText"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bssidText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="bssidText"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ssidText" />
+
+    <TextView
+        android:id="@+id/signalStrengthText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="signalStrengthText"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bssidText"/>
+
+    <TextView
+        android:id="@+id/encryptionText"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:text="encryptionText"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signalStrengthText"/>
+
+    <TextView
+        android:id="@+id/channelText"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:text="channelText"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/encryptionText"/>
+
+    <TextView
+        android:id="@+id/frequencyText"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:text="frequencyText"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/channelText"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
