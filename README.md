@@ -40,6 +40,7 @@ SSID: Network name.
 BSSID: Access point’s MAC address.
 Signal Strength: Measured in dBm.
 Encryption: Encryption type (e.g., WPA2, WEP).
+Channel: 3
 Frequency: Channel frequency in GHz (e.g., 2.4 GHz or 5 GHz bands).
 ```
 
