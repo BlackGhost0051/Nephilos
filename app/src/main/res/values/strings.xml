@@ -16,6 +16,8 @@
     <string name="toolbar_arp_spoof">Arp Spoof</string>
     <string name="toolbar_dns_lookup">DNS Lookup</string>
     <string name="toolbar_settings">Settings</string>
+    <string name="toolbar_save">Save</string>
+
 
     <!-- PortScannerFragment -->
     <string name="PortScannerFragment_EditText_ipInput_hint">Enter IP Address</string>
