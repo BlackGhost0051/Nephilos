@@ -124,3 +124,7 @@ Planning:
 - MITM
 - Deauthenticate Clients ( 802.11 )
 - Save pcap
+
+Comment
+- Save info
+- Save format
