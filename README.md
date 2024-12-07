@@ -124,6 +124,7 @@ Planning:
 - MITM
 - Deauthenticate Clients ( 802.11 )
 - Save pcap
+- Web tester ( like burp )
 
 Comment
 - Save info
