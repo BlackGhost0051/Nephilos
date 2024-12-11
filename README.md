@@ -95,6 +95,17 @@ white_border.xml
 white_down_border.xml
 wifi_24.xml
 
+activity_main.xml
+fragment_arp_spoof.xml
+fragment_dns_lookup.xml
+fragment_mac_scanner.xml
+fragment_main.xml
+fragment_port_scanner.xml
+fragment_request.xml
+fragment_wifi_scanner.xml
+header.xml
+item_wifi.xml
+
 MacScannerTask.java
 PortScannerTask.java
 WifiScannerTask.java
