@@ -106,6 +106,17 @@ fragment_wifi_scanner.xml
 header.xml
 item_wifi.xml
 
+
+colors.xml
+ic_launcher_background.xml
+strings.xml
+styles.xml
+themes.xml
+
+backup_rules.xml
+data_extraction_rules.xml
+preferences.xml
+
 MacScannerTask.java
 PortScannerTask.java
 WifiScannerTask.java
