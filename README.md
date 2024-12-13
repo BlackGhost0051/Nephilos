@@ -140,6 +140,10 @@ AP.java
 Device.java
 
 MainActivity.java
+
+
+AndroidManifest.xml
+ic_launcher-playstore.png
 ```
 
 ## JNILibs
