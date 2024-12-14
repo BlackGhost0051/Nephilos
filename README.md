@@ -149,6 +149,12 @@ ic_launcher-playstore.png
 .gitignore
 build.gradle
 proguard-rules.pro
+
+gradle.properties
+gradlew
+gradlew.bat
+local.properties
+README.md
 ```
 
 ## JNILibs
