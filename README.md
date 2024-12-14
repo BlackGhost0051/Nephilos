@@ -144,6 +144,11 @@ MainActivity.java
 
 AndroidManifest.xml
 ic_launcher-playstore.png
+
+
+.gitignore
+build.gradle
+proguard-rules.pro
 ```
 
 ## JNILibs
