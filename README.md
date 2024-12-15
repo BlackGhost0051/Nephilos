@@ -176,7 +176,13 @@ The `CMakeLists.txt` file sets up the build system for compiling these native C 
 ### JNI C Source Files
 
 #### arp_spoof.c
+
+arp_spoof
+
 #### fill_arp_table.c
+
+fill_arp_table
+
 #### get_interfaces.c
 
 The `get_interfaces.c` file retrieves and displays a list of network interfaces available on the device. It uses system calls to obtain interface names, providing insight into network hardware that can be utilized for network-related operations.
