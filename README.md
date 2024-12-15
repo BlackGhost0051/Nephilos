@@ -117,6 +117,11 @@ backup_rules.xml
 data_extraction_rules.xml
 preferences.xml
 
+arp_spoof.c
+CMakeLists.txt
+fill_arp_table.c
+get_interfaces.c
+
 MacScannerTask.java
 PortScannerTask.java
 WifiScannerTask.java
@@ -155,6 +160,7 @@ gradlew
 gradlew.bat
 local.properties
 README.md
+settings.gradle
 ```
 
 ## JNILibs
