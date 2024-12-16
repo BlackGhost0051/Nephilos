@@ -203,11 +203,12 @@ Planning:
 - Request send (...)
 - URL to IP
 - Beacon Flooding Attack ( 802.11 Flooding AP)
-- Free AP
+- Free AP ( Fake )
 - MITM
-- Deauthenticate Clients ( 802.11 )
+- Deauthenticate Clients ( 802.11 spoof )
 - Save pcap
-- Web tester ( like burp )
+
+- Web tester ( like burp ) ???
 
 Comment
 - Save info
