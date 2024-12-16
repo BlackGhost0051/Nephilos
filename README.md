@@ -177,7 +177,7 @@ The `CMakeLists.txt` file sets up the build system for compiling these native C 
 
 #### arp_spoof.c
 
-arp_spoof
+Implements ARP spoofing, a technique used to intercept and manipulate network traffic by sending fake ARP messages.
 
 #### fill_arp_table.c
 
